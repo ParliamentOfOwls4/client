@@ -1,33 +1,35 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const RandomDrinks = () => {
-    console.log('random button clicked')
-    const [randomDrinks, setRandomDrinks] = useState([])
+  //   console.log('random button clicked');
+  const [randomDrinks, setRandomDrinks] = useState([]);
 
-    useEffect(() => {
-        axios({
-            "method":"GET",
-            "url":"https://the-cocktail-db.p.rapidapi.com/randomselection.php",
-            "headers":{
-            "content-type":"application/octet-stream",
-            "x-rapidapi-host":"the-cocktail-db.p.rapidapi.com",
-            "x-rapidapi-key":"ff61de8c3fmshdbbdcfd2003501ep1d77b7jsn0bc9bc4a1b9b",
-            "useQueryString":true
-            }
-        })
-          .then(res => setRandomDrinks(res.data.drinks.strDrink))
-          .catch(console.error)
-      }, [])
+  const config = {
+    method: 'GET',
+    url: 'https://the-cocktail-db.p.rapidapi.com/randomselection.php',
+    headers: {
+      'content-type': 'application/octet-stream',
+      'x-rapidapi-host': 'the-cocktail-db.p.rapidapi.com',
+      'x-rapidapi-key': 'ff61de8c3fmshdbbdcfd2003501ep1d77b7jsn0bc9bc4a1b9b',
+      useQueryString: true,
+    },
+  };
+  useEffect(() => {
+    axios(config)
+      .then((res) => setRandomDrinks(res.data.drinks))
+      .catch(console.error);
+  });
 
-        return (
-            <div className='randomDrink'>
-                <h3>
-                    hello
-                </h3>
-            </div>
-            
-        )
-}
+  const eachDrink = randomDrinks.map((drink) => (
+    <div key={drink.idDrink}>{drink.strDrink}</div>
+  ));
 
-export default RandomDrinks
+  return (
+    <div className='randomDrink'>
+      <h3>{eachDrink}</h3>
+    </div>
+  );
+};
+
+export default RandomDrinks;

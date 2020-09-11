@@ -1,20 +1,19 @@
-import React, { useState } from 'react'
-import NavBar from '../Layout/NavBar'
-import axios from 'axios'
-import RandomDrinks from '../Drinks/RandomDrinks'
+import React, { useState } from 'react';
+import axios from 'axios';
+import RandomDrinks, { randomDrinks } from '../Drinks/RandomDrinks';
 
+const onSubmit = () => {
+  RandomDrinks();
+  return <RandomDrinks />;
+};
 
 const Home = () => {
-    return (
-        <div>
-            <NavBar />
-        <button>
-            Get 10 random cocktails
-        </button>
-        
-           <RandomDrinks /> 
-        </div>
-    )
-}
+  return (
+    <div>
+      <button onSubmit={onSubmit}>Get 10 random cocktails</button>
+      {/* <RandomDrinks /> */}
+    </div>
+  );
+};
 
-export default Home
+export default Home;
