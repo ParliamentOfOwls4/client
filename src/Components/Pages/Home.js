@@ -5,6 +5,7 @@ const Home = () => {
   const [randomDrinks, setRandomDrinks] = useState([]);
 
   const tenDrinks = async () => {
+
     const config = {
       method: 'GET',
       url: 'https://the-cocktail-db.p.rapidapi.com/randomselection.php',
@@ -14,7 +15,7 @@ const Home = () => {
         'x-rapidapi-key': 'ff61de8c3fmshdbbdcfd2003501ep1d77b7jsn0bc9bc4a1b9b',
         useQueryString: true,
       },
-    };
+    } ;
 
     await axios(config)
       .then((res) => setRandomDrinks(res.data.drinks))
@@ -23,6 +24,7 @@ const Home = () => {
       .catch(console.error);
 
     console.log(randomDrinks[0]);
+
   };
 
   return (
