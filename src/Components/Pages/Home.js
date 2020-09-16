@@ -21,8 +21,6 @@ const Home = () => {
       .then((res) => console.log(randomDrinks))
       // .then((random) => console.log(randomDrinks))
       .catch(console.error);
-
-    console.log(randomDrinks[0]);
   };
 
   return (
