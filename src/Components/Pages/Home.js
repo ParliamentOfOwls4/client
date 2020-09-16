@@ -22,19 +22,12 @@ const Home = () => {
       // .then((random) => console.log(randomDrinks))
       .catch(console.error);
 
-    // const eachDrink = randomDrinks.map((drink) => (
-    //   <div key={drink.idDrink}>{drink.strDrink}</div>
-    // ));
     console.log(randomDrinks[0]);
-  };
-  // tenDrinks();
-  const onClick = () => {
-    tenDrinks();
   };
 
   return (
     <div>
-      <button onClick={onClick}>Get 10 random cocktails</button>
+      <button onClick={tenDrinks}>Get 10 random cocktails</button>
       {randomDrinks.map((drink) => (
         <div key={drink.idDrink}>{drink.strDrink}</div>
       ))}
