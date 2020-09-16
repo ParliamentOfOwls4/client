@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Components/Pages/Home';
 import NavBar from './Components/Layout/NavBar';
+import './App.css';
 
 function App() {
   return (

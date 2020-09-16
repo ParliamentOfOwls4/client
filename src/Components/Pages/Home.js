@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 const Home = () => {
   const [randomDrinks, setRandomDrinks] = useState([]);
 
-  const tenDrinks = () => {
+  const tenDrinks = async () => {
     const config = {
       method: 'GET',
       url: 'https://the-cocktail-db.p.rapidapi.com/randomselection.php',
@@ -16,22 +16,18 @@ const Home = () => {
       },
     };
 
-    axios(config)
+    await axios(config)
       .then((res) => setRandomDrinks(res.data.drinks))
-      .then((randomDrinks) => console.log(randomDrinks))
+      .then((res) => console.log(randomDrinks))
+      // .then((random) => console.log(randomDrinks))
       .catch(console.error);
 
-    const eachDrink = randomDrinks.map((drink) => (
-      <div key={drink.idDrink}>{drink.strDrink}</div>
-    ));
-
-    return (
-      <div className='randomDrink'>
-        <h3>{eachDrink}</h3>
-      </div>
-    );
+    // const eachDrink = randomDrinks.map((drink) => (
+    //   <div key={drink.idDrink}>{drink.strDrink}</div>
+    // ));
+    console.log(randomDrinks[0]);
   };
-
+  // tenDrinks();
   const onClick = () => {
     tenDrinks();
   };
@@ -39,7 +35,9 @@ const Home = () => {
   return (
     <div>
       <button onClick={onClick}>Get 10 random cocktails</button>
-      {/* <RandomDrinks /> */}
+      {randomDrinks.map((drink) => (
+        <div key={drink.idDrink}>{drink.strDrink}</div>
+      ))}
     </div>
   );
 };
