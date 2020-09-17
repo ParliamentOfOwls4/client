@@ -1,5 +1,39 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap'); */
+/* font-family: 'Libre Baskerville', serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+/* font-family: 'Major Mono Display', monospace; */
+
+@import url('https://fonts.googleapis.com/css2?family=Sirin+Stencil&display=swap');
+
+/* font-family: 'Sirin Stencil', cursive; */
+
 .nav {
-  background-color: blue;
+  background-color: rgba(113, 60, 0, 0.9);
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+}
+.navLinks {
+  font-family: 'Sirin Stencil', cursive;
+  font-size: 35px;
   display: inline;
-  float: left;
+  margin: 5px 30px;
+  padding: 5px 10px 5px 10px;
+}
+.navLinks a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo {
+  /* color: rgb(255, 254, 242);
+  font-family: 'Major Mono Display', monospace;
+  font-size: 35px; */
+  padding: 0 10px 5px 20px;
+  top: 0;
+  left: 0;
+  position: absolute;
 }

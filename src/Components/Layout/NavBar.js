@@ -1,15 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from './logo.png';
 
 const NavBar = () => {
   return (
     <div className='nav'>
+      <img className='logo' src={logo} alt='logo' height='85' width='85' />
+      {/* <p className='logo'>Jigr</p> */}
       <ul>
-        <li>
-          <Link to='/'>Home</Link>
+        <li className='navLinks'>
+          <Link to='/'>HOME</Link>
         </li>
-        <li>
-          <Link to='/about'>About</Link>
+        <li className='navLinks'>
+          <Link to='/about'>ABOUT</Link>
         </li>
       </ul>
     </div>
