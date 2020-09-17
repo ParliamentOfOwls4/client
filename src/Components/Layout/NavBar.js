@@ -5,7 +5,7 @@ import logo from './logo.png';
 const NavBar = () => {
   return (
     <div className='nav'>
-      <img className='logo' src={logo} alt='logo' height='85' width='85' />
+      <img className='logo' src={logo} alt='logo' height='85' width='110' />
       {/* <p className='logo'>Jigr</p> */}
       <ul>
         <li className='navLinks'>

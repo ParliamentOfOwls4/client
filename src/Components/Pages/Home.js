@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Button from 'react-bootstrap/Button';
+
 
 const Home = () => {
   const [randomDrinks, setRandomDrinks] = useState([]);
@@ -28,10 +30,10 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <button onClick={tenDrinks}>Get 10 random cocktails</button>
+    <div className='container'>
+      <Button className='randomDrinksButton' type='submit' variant='secondary' onClick={tenDrinks}>Get 10 random cocktails</Button>
       {randomDrinks.map((drink) => (
-        <div key={drink.idDrink}>{drink.strDrink}</div>
+        <div className='randomDrinkList' key={drink.idDrink}>{drink.strDrink}</div>
       ))}
     </div>
   );
