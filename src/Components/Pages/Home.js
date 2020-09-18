@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 
-const Home = () => {
+const Home = (props) => {
+  console.log('props are', props)
   const [randomDrinks, setRandomDrinks] = useState([]);
 
+  // Make call to Liquor API to fetch 10 random drinks
   const tenDrinks = async () => {
     const config = {
       method: 'GET',
@@ -19,17 +21,21 @@ const Home = () => {
     };
 
     await axios(config)
+      // set the randomDrinks state to the response that we get back from the API
       .then((res) => setRandomDrinks(res.data.drinks))
-      .then(() => console.log(randomDrinks))
-      // .then((random) => console.log(randomDrinks))
       .catch(console.error);
   };
 
+
+  // Render a button to invoke the axios call from above
+    // Display each drink as a Link
+    // Pass the id down through the link, accessible on the next page via props.location.state.id 
+    // Set each drink's key to the id of the drink in the database (appeasing the linter)
   return (
     <div>
       <Button className='randomDrinksButton' type='submit' variant='secondary' onClick={tenDrinks}>Get 10 random cocktails</Button>
       {randomDrinks.map((drink) => (
-        <Link className='randomDrinkList' to='/:id' key={drink.idDrink}>{drink.strDrink}</Link>
+        <Link className='randomDrinkList' to={{ pathname: `/${drink.idDrink}`, state: { id: `${drink.idDrink}`} }} key={drink.idDrink}>{drink.strDrink}</Link>
       ))}
     </div>
   );

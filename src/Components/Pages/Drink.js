@@ -2,10 +2,16 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { Button } from 'react-bootstrap';
 
-const Drink = ({ props }) => {
+// import { Link } from 'react-router-dom'
+
+
+const Drink = (props) => {
     const [drink, setDrink] = useState(null)
+    console.log('Drink.js props ', props)
 
     const getDrink = async () => {
+        // Set up "Lookup full cocktail details by ID" request to API 
+            // with id from clicked Link component in Home.js (params)
         const config = {
             method: "GET",
             url: "https://the-cocktail-db.p.rapidapi.com/lookup.php",
@@ -15,7 +21,7 @@ const Drink = ({ props }) => {
                 "x-rapidapi-key": "ff61de8c3fmshdbbdcfd2003501ep1d77b7jsn0bc9bc4a1b9b",
                 "useQueryString": true
             }, params: {
-                "i": "11054"
+                "i": `${props.location.state.id}`
             }
         };
 
@@ -24,9 +30,7 @@ const Drink = ({ props }) => {
             .catch(console.error);
     };
     console.log(drink);
-    // console.log('str', drink[0].strDrink);
 
-    // const { strDrink } = drink
     if (!drink) {
         console.log('waittt...');
     }

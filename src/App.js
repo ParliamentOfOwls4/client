@@ -8,7 +8,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function App() {
+function App(props) {
   return (
     <div className='App'>
       <header className='App-header'></header>
@@ -16,7 +16,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/:id' component={Drink} />
+          <Route exact path='/:id' component={Drink}/>
 
           {/* <Route exact path='/about' component={About} />
             <Route exact path='/register' component={Register} />
