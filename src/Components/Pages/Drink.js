@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FaGlassMartiniAlt } from 'react-icons/fa';
+import { ImListNumbered } from 'react-icons/im';
+import { GrWorkshop } from 'react-icons/gr';
+
 // import { Link } from 'react-router-dom'
 
 const Drink = (props) => {
@@ -59,13 +63,16 @@ const Drink = (props) => {
         alt='pic'
       />
       <p>
+        <FaGlassMartiniAlt /> {'   '}
         <strong>Best Served In:</strong> {drink ? drink[0].strGlass : ''}
       </p>
       <p>
-        <strong>Ingredients:</strong>{' '}
+        <ImListNumbered />
+        {'   '} <strong>Ingredients:</strong>{' '}
         {ingredients.map((ing) => `${ing}`).join('\n')}
       </p>
       <p>
+        <GrWorkshop /> {'   '}
         <strong>Instructions:</strong> {drink ? drink[0].strInstructions : ''}
       </p>
     </div>
