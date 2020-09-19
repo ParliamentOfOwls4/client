@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 // import { Link } from 'react-router-dom'
+
 const Drink = (props) => {
   const [drink, setDrink] = useState(null);
   console.log('Drink.js props ', props);
+
   // Set up "Lookup full cocktail details by ID" request to API
   // with id from clicked Link component in Home.js (params)
   const config = {
@@ -19,6 +21,7 @@ const Drink = (props) => {
       i: `${props.location.state.id}`,
     },
   };
+
   // Only thing I changed, added useEffect to call api
   useEffect(() => {
     axios(config)
@@ -26,12 +29,45 @@ const Drink = (props) => {
       .catch(console.error);
   }, []);
   console.log(drink);
+  // console.log(drink[0].strDrinkThumb);
   if (!drink) {
     console.log('waittt...');
   }
+
+  const ingredients = [];
+  if (drink) {
+    console.log(drink);
+    for (let i = 1; i <= 20; i++) {
+      if (drink[0][`strIngredient${i}`]) {
+        ingredients.push(
+          `${drink[0][`strIngredient${i}`]} - ${drink[0][`strMeasure${i}`]}`
+        );
+      } else {
+        break;
+      }
+    }
+  }
+
+  console.log(ingredients);
   return (
-    <div>
-      <h3>{drink ? drink[0].strDrink : ''}</h3>
+    <div className='single-drink'>
+      <h1>{drink ? drink[0].strDrink : ''}</h1>
+      <img
+        src={drink ? `${drink[0].strDrinkThumb}` : ''}
+        height='250'
+        width='250'
+        alt='pic'
+      />
+      <p>
+        <strong>Best Served In:</strong> {drink ? drink[0].strGlass : ''}
+      </p>
+      <p>
+        <strong>Ingredients:</strong>{' '}
+        {ingredients.map((ing) => `${ing}`).join('\n')}
+      </p>
+      <p>
+        <strong>Instructions:</strong> {drink ? drink[0].strInstructions : ''}
+      </p>
     </div>
   );
 };
