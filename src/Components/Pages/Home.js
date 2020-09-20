@@ -26,6 +26,10 @@ const Home = (props) => {
       .catch(console.error);
   };
 
+  const onSubmit = (event) => {
+    event.preventDefault()
+    console.log('search bar was clicked')
+  }
 
   // Render a button to invoke the axios call from above
     // Display each drink as a Link
@@ -33,7 +37,13 @@ const Home = (props) => {
     // Set each drink's key to the id of the drink in the database (appeasing the linter)
   return (
     <div>
-      <input className='home-page-search-bar'type="text" name="name" />
+      <form>
+        <label>
+          searchbar:
+          <input className='home-page-search-bar'type="text" name="name" />
+        </label>
+        <input type="submit" value="Submit" onClick={onSubmit} />
+      </form>
       <Button className='randomDrinksButton' type='submit' variant='secondary' onClick={tenDrinks}>Get 10 random cocktails</Button>
       {randomDrinks.map((drink) => (
         <Link className='randomDrinkList' to={{ pathname: `/${drink.idDrink}`, state: { id: `${drink.idDrink}`} }} key={drink.idDrink}>{drink.strDrink}</Link>
