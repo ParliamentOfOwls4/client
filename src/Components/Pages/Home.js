@@ -33,6 +33,7 @@ const Home = (props) => {
     // Set each drink's key to the id of the drink in the database (appeasing the linter)
   return (
     <div>
+      <input className='home-page-search-bar'type="text" name="name" />
       <Button className='randomDrinksButton' type='submit' variant='secondary' onClick={tenDrinks}>Get 10 random cocktails</Button>
       {randomDrinks.map((drink) => (
         <Link className='randomDrinkList' to={{ pathname: `/${drink.idDrink}`, state: { id: `${drink.idDrink}`} }} key={drink.idDrink}>{drink.strDrink}</Link>
