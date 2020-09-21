@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Row, Col, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
+import Loading from '../assets/Loading'
 
 import axios from 'axios';
 
@@ -52,24 +53,29 @@ const Vodka = () => {
       .catch(console.error);
   }, []);
 
-  return (
-    <Container>
-      <Row>
-        <Col>{vodka ? vodka.strDescription : 'nothing yet'}</Col>
-        <Col>{vodkaDrinks ?
-          vodkaDrinks.map((drink) => (
-            <ul>
-              <li key={drink.idDrink}>
-                <Link to={{ pathname: `/drink/${drink.idDrink}`, state: { id: `${drink.idDrink}` } }}>
-                  {drink.strDrink}
-                </Link>
-              </li>
-            </ul>
-          ))
-          : 'nothing yet'}</Col>
-      </Row>
-    </Container>
-  )
-}
+
+  if (!vodka || !vodkaDrinks) {
+    return <Loading />;
+  } else {
+    return (
+      <Container>
+        <Row>
+          <Col>{vodka.strDescription}</Col>
+          <Col>{
+            vodkaDrinks.map((drink) => (
+              <ul>
+                <li key={drink.idDrink}>
+                  <Link to={{ pathname: `/drink/${drink.idDrink}`, state: { id: `${drink.idDrink}` } }}>
+                    {drink.strDrink}
+                  </Link>
+                </li>
+              </ul>
+            ))
+          }</Col>
+        </Row>
+      </Container>
+    );
+  }
+};
 
 export default Vodka

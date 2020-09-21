@@ -56,35 +56,42 @@ const Drink = (props) => {
     }
 
     console.log(ingredients);
-    return (
-        <div className='single-drink'>
-            <h1>{drink ? drink[0].strDrink : <Loading />}</h1>
-            <img
-                src={drink ? `${drink[0].strDrinkThumb}` : ''}
-                height='250'
-                width='250'
-                alt='pic'
-            />
-            <p>
-                <FaGlassMartiniAlt /> {'   '}
-                <strong>Best Served In:</strong> {drink ? drink[0].strGlass : ''}
-            </p>
-            <ImListNumbered />
-            {'   '} <strong>Ingredients:</strong>{' '}
-            <ul>
-                <li>
-                    <ul>
-                        {ingredients.map((ing) => (
-                            <li>{ing}</li>
-                        ))}
-                    </ul>
-                </li>
-            </ul>
-            <p>
-                <GrWorkshop /> {'   '}
-                <strong>Instructions:</strong> {drink ? drink[0].strInstructions : ''}
-            </p>
-        </div>
-    );
+
+    if (!drink) {
+        return <Loading />;
+    } else {
+        return (
+            <div className='single-drink'>
+                <h1>{drink[0].strDrink}</h1>
+                <img
+                    src={`${drink[0].strDrinkThumb}`}
+                    height='250'
+                    width='250'
+                    alt='pic'
+                />
+                <p>
+                    <FaGlassMartiniAlt /> {'   '}
+                    <strong>Best Served In:</strong> {drink[0].strGlass}
+                </p>
+                <ImListNumbered />
+                {'   '} <strong>Ingredients:</strong>{' '}
+                <ul>
+                    <li>
+                        <ul>
+                            {ingredients.map((ing) => (
+                                <li>{ing}</li>
+                            ))}
+                        </ul>
+                    </li>
+                </ul>
+                <p>
+                    <GrWorkshop /> {'   '}
+                    <strong>Instructions:</strong> {drink[0].strInstructions}
+                </p>
+            </div>
+        );
+    }
 };
+
+
 export default Drink;
