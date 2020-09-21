@@ -53,10 +53,6 @@ const Home = (props) => {
       </Dropdown>
       <Button className='btn randomDrinksButton' type='submit' variant='secondary' onClick={tenDrinks}>Get 10 random cocktails</Button>
 
-      {/* {randomDrinks.map((drink) => (
-        <Link className='randomDrinkList' to={{ pathname: `/drink/${drink.idDrink}`, state: { id: `${drink.idDrink}` } }} key={drink.idDrink}>{drink.strDrink}</Link>
-      ))} */}
-
       {randomDrinks.map((drink) => (
         <ul>
           <li key={drink.idDrink}>

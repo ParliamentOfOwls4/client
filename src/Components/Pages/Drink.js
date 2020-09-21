@@ -3,6 +3,7 @@ import axios from 'axios';
 import { FaGlassMartiniAlt } from 'react-icons/fa';
 import { ImListNumbered } from 'react-icons/im';
 import { GrWorkshop } from 'react-icons/gr';
+import Loading from '../assets/Loading.js'
 
 // import { Link } from 'react-router-dom'
 
@@ -57,7 +58,7 @@ const Drink = (props) => {
     console.log(ingredients);
     return (
         <div className='single-drink'>
-            <h1>{drink ? drink[0].strDrink : ''}</h1>
+            <h1>{drink ? drink[0].strDrink : <Loading />}</h1>
             <img
                 src={drink ? `${drink[0].strDrinkThumb}` : ''}
                 height='250'
