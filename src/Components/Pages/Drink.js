@@ -66,11 +66,15 @@ const Drink = (props) => {
         <FaGlassMartiniAlt /> {'   '}
         <strong>Best Served In:</strong> {drink ? drink[0].strGlass : ''}
       </p>
-      <p>
-        <ImListNumbered />
-        {'   '} <strong>Ingredients:</strong>{' '}
-        {ingredients.map((ing) => `${ing}`).join('\n')}
-      </p>
+      <ImListNumbered />
+      {'   '} <strong>Ingredients:</strong>{' '}
+      <ul>
+        <li>
+          {ingredients.map((ing) => (
+            <li>{ing}</li>
+          ))}
+        </li>
+      </ul>
       <p>
         <GrWorkshop /> {'   '}
         <strong>Instructions:</strong> {drink ? drink[0].strInstructions : ''}
