@@ -21,7 +21,6 @@
   font-size: 35px;
   display: inline;
   margin: 5px 30px;
-  padding: 5px 10px 5px 10px;
 }
 .navLinks a {
   color: #fff;
@@ -46,9 +45,16 @@
 .randomDrinkList {
   font-family: 'Libre Baskerville', serif;
   align-items: center;
-}t
+}
 
 .randomDrinksButton {
   justify-content: center;
+}
 
+.single-drink {
+  padding: 30px auto;
+  width: 70%;
+  font-family: 'Libre Baskerville', serif;
+  align-items: center;
+  justify-content: center;
 }
