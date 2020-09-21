@@ -33,14 +33,14 @@ const Home = (props) => {
   }
 
   // Render a button to invoke the axios call from above
-    // Display each drink as a Link
-    // Pass the id down through the link, accessible on the next page via props.location.state.id 
-    // Set each drink's key to the id of the drink in the database (appeasing the linter)
+  // Display each drink as a Link
+  // Pass the id down through the link, accessible on the next page via props.location.state.id 
+  // Set each drink's key to the id of the drink in the database (appeasing the linter)
   return (
     <div>
       <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Dropdown Button
+        <Dropdown.Toggle className='btn' variant="success" id="dropdown-basic">
+          Liquor
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
@@ -51,12 +51,25 @@ const Home = (props) => {
           <Dropdown.Item href="#/action-5">Tequila</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
-      <Button className='randomDrinksButton' type='submit' variant='secondary' onClick={tenDrinks}>Get 10 random cocktails</Button>
+      <Button className='btn randomDrinksButton' type='submit' variant='secondary' onClick={tenDrinks}>Get 10 random cocktails</Button>
+
+      {/* {randomDrinks.map((drink) => (
+        <Link className='randomDrinkList' to={{ pathname: `/drink/${drink.idDrink}`, state: { id: `${drink.idDrink}` } }} key={drink.idDrink}>{drink.strDrink}</Link>
+      ))} */}
+
       {randomDrinks.map((drink) => (
-        <Link className='randomDrinkList' to={{ pathname: `/drink/${drink.idDrink}`, state: { id: `${drink.idDrink}`} }} key={drink.idDrink}>{drink.strDrink}</Link>
+        <ul>
+          <li key={drink.idDrink}>
+            <Link to={{ pathname: `/drink/${drink.idDrink}`, state: { id: `${drink.idDrink}` } }} key={drink.idDrink}>
+              {drink.strDrink}
+            </Link>
+          </li>
+        </ul>
       ))}
+
     </div>
   );
 };
+
 
 export default Home;
