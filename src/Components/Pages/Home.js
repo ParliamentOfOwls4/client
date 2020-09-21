@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
+import Dropdown from 'react-bootstrap/Dropdown'
 
 const Home = (props) => {
   console.log('props are', props)
@@ -37,16 +38,22 @@ const Home = (props) => {
     // Set each drink's key to the id of the drink in the database (appeasing the linter)
   return (
     <div>
-      <form>
-        <label>
-          searchbar:
-          <input className='home-page-search-bar'type="text" name="name" />
-        </label>
-        <input type="submit" value="Submit" onClick={onSubmit} />
-      </form>
+      <Dropdown>
+        <Dropdown.Toggle variant="success" id="dropdown-basic">
+          Dropdown Button
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item href="/baseliquor/vodka">Vodka</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">Whiskey</Dropdown.Item>
+          <Dropdown.Item href="#/action-3">Rum</Dropdown.Item>
+          <Dropdown.Item href="#/action-4">Gin</Dropdown.Item>
+          <Dropdown.Item href="#/action-5">Tequila</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
       <Button className='randomDrinksButton' type='submit' variant='secondary' onClick={tenDrinks}>Get 10 random cocktails</Button>
       {randomDrinks.map((drink) => (
-        <Link className='randomDrinkList' to={{ pathname: `/${drink.idDrink}`, state: { id: `${drink.idDrink}`} }} key={drink.idDrink}>{drink.strDrink}</Link>
+        <Link className='randomDrinkList' to={{ pathname: `/drink/${drink.idDrink}`, state: { id: `${drink.idDrink}`} }} key={drink.idDrink}>{drink.strDrink}</Link>
       ))}
     </div>
   );
