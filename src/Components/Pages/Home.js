@@ -7,6 +7,8 @@ import Dropdown from 'react-bootstrap/Dropdown'
 const Home = (props) => {
   console.log('props are', props)
   const [randomDrinks, setRandomDrinks] = useState([]);
+  const [alcohol, setAlcohol] = useState([]);
+
 
   // Make call to Liquor API to fetch 10 random drinks
   const tenDrinks = async () => {
@@ -27,9 +29,10 @@ const Home = (props) => {
       .catch(console.error);
   };
 
-  const onSubmit = (event) => {
-    event.preventDefault()
-    console.log('search bar was clicked')
+  const handleSelect = (event) => {
+    // event.preventDefault()
+    console.log('selection was made')
+    console.log(event)
   }
 
   // Render a button to invoke the axios call from above
@@ -43,12 +46,12 @@ const Home = (props) => {
           Liquor
         </Dropdown.Toggle>
 
-        <Dropdown.Menu>
-          <Dropdown.Item href="/baseliquor/vodka">Vodka</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Whiskey</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Rum</Dropdown.Item>
-          <Dropdown.Item href="#/action-4">Gin</Dropdown.Item>
-          <Dropdown.Item href="#/action-5">Tequila</Dropdown.Item>
+        <Dropdown.Menu onSelect={handleSelect}>
+          <Dropdown.Item event-key="vodka" href="/baseliquor/vodka">Vodka</Dropdown.Item>
+          <Dropdown.Item event-key="whiskey" href="/baseliquor/alcohol">Whiskey</Dropdown.Item>
+          <Dropdown.Item event-key="rum" href="#/action-3">Rum</Dropdown.Item>
+          <Dropdown.Item event-key="gin" href="#/action-4">Gin</Dropdown.Item>
+          <Dropdown.Item event-key="tequila" href="#/action-5">Tequila</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
       <Button className='btn randomDrinksButton' type='submit' variant='secondary' onClick={tenDrinks}>Get 10 random cocktails</Button>
