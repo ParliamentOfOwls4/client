@@ -3,15 +3,12 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown'
-
-let selection
+import { DropdownButton } from 'react-bootstrap'
 
 const Home = (props) => {
   console.log('props are', props)
   const [randomDrinks, setRandomDrinks] = useState([]);
   const [alcohol, setAlcohol] = useState([]);
-
-  selection = alcohol
 
   // Make call to Liquor API to fetch 10 random drinks
   const tenDrinks = async () => {
@@ -32,20 +29,14 @@ const Home = (props) => {
       .catch(console.error);
   };
 
-  const onClick = (e, eventKey) => {
+  const onSelect = (e) => {
     // e.preventDefault()
     console.log('selection was made')
-    console.log(e.target.innerHTML)
-    const selection = e.target.innerHTML
-    setAlcohol(selection)
+    console.log(e)
+    setAlcohol(e)
   }
 
   console.log(alcohol)
-  // onClick={onClick}
-  // onClick={onClick}
-  // onClick={onClick}
-  // onClick={onClick}
-  // onClick={onClick}
 
   // Render a button to invoke the axios call from above
   // Display each drink as a Link
@@ -54,17 +45,13 @@ const Home = (props) => {
   return (
     <div>
       <Dropdown>
-        <Dropdown.Toggle className='btn' variant="success" id="dropdown-basic">
-          Liquor
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu title='liquor'>
-          <Dropdown.Item   onClick={onClick} eventKey="vodka" href="/baseliquor/vodka">Vodka</Dropdown.Item>
-          <Dropdown.Item   onClick={onClick} eventKey="whiskey" href="/baseliquor/alcohol">Whiskey</Dropdown.Item>
-          <Dropdown.Item   onClick={onClick} eventKey="rum" href="#/action-3">Rum</Dropdown.Item>
-          <Dropdown.Item   onClick={onClick} eventKey="gin" href="#/action-4">Gin</Dropdown.Item>
-          <Dropdown.Item   onClick={onClick} eventKey="tequila" href="#/action-5">Tequila</Dropdown.Item>
-        </Dropdown.Menu>
+        <DropdownButton onSelect={onSelect} title='liquor'>
+          <Dropdown.Item eventKey="vodka" href="/baseliquor/vodka">Vodka</Dropdown.Item>
+          <Dropdown.Item eventKey="whiskey" href="/baseliquor/alcohol">Whiskey</Dropdown.Item>
+          <Dropdown.Item eventKey="rum" href="#/action-3">Rum</Dropdown.Item>
+          <Dropdown.Item eventKey="gin" href="#/action-4">Gin</Dropdown.Item>
+          <Dropdown.Item eventKey="tequila" href="#/action-5">Tequila</Dropdown.Item>
+        </DropdownButton>
       </Dropdown>
       <Button className='btn randomDrinksButton' type='submit' variant='secondary' onClick={tenDrinks}>Get 10 random cocktails</Button>
 
@@ -82,6 +69,4 @@ const Home = (props) => {
   );
 };
 
-
 export default Home 
-export { selection }
