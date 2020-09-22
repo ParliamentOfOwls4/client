@@ -10,9 +10,9 @@
 /* font-family: 'Sirin Stencil', cursive; */
 
 .nav {
-  background-color: rgba(113, 60, 0, 0.9);
+  background-color: #b3a394;
   width: 100%;
-  height: 80px ;
+  height: 80px;
   display: flex;
   flex-direction: row-reverse;
   position: relative;
@@ -47,9 +47,10 @@ ul {
   list-style-type: none;
 }
 
-a:Link, a:visited { 
-  color: inherit; 
-} 
+a:link,
+a:visited {
+  color: inherit;
+}
 
 .randomDrinkList {
   font-family: 'Libre Baskerville', serif;
@@ -69,10 +70,35 @@ a:Link, a:visited {
 }
 
 .btn {
-margin: 5px;
+  margin: 5px;
 }
 
 .randomDrinksButton {
   margin-top: 0px;
   margin-bottom: 10px;
+}
+
+.alcoholDrinkList {
+  /* font-family: 'Libre Baskerville', serif; */
+  border: 0.5px solid #000;
+  box-shadow: 3px 5px 10px #888888;
+  border-radius: 4px;
+  background-color: #cdd7d6;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.alcoholDrinkListLink {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 15px;
+  display: inline;
+  margin: auto;
+  color: #fff;
+  align-items: center;
+  position: relative;
+}
+
+.alcoholDrinkListLink a {
+  text-decoration: none;
 }
