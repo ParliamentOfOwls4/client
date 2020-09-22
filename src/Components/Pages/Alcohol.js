@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react'
 import { Row, Col, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import Loading from '../assets/Loading'
+import { selection } from './Home.js'
 
 import axios from 'axios';
 
 const Alcohol = (props) => {
   const [vodka, setVodka] = useState(null);
   const [vodkaDrinks, setVodkaDrinks] = useState(null);
+//   const { alcohol } = 
   console.log('props are', props)
+  console.log(selection)
   // Make request to "Search cocktail by name" to get an "about this type of alcohol blurb"
 //   const configVodka = {
 //     method: 'GET',
