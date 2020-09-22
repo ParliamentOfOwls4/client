@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
+import Dropdown from 'react-bootstrap/Dropdown'
+import { DropdownButton } from 'react-bootstrap'
 
 const Home = (props) => {
-  console.log('props are', props)
   const [randomDrinks, setRandomDrinks] = useState([]);
+  const [alcohol, setAlcohol] = useState([]);
 
   // Make call to Liquor API to fetch 10 random drinks
   const tenDrinks = async () => {
@@ -26,19 +28,39 @@ const Home = (props) => {
       .catch(console.error);
   };
 
+  const onSelect = (e) => {
+    setAlcohol(e)
+  }
 
   // Render a button to invoke the axios call from above
-    // Display each drink as a Link
-    // Pass the id down through the link, accessible on the next page via props.location.state.id 
-    // Set each drink's key to the id of the drink in the database (appeasing the linter)
+  // Display each drink as a Link
+  // Pass the id down through the link, accessible on the next page via props.location.state.id 
+  // Set each drink's key to the id of the drink in the database (appeasing the linter)
   return (
     <div>
-      <Button className='randomDrinksButton' type='submit' variant='secondary' onClick={tenDrinks}>Get 10 random cocktails</Button>
+      <Dropdown>
+        <DropdownButton onSelect={onSelect} title='liquor'>
+          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'vodka' } }} eventKey="vodka" >Vodka</Dropdown.Item>
+          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'scotch' } }} eventKey="scotch" >Scotch</Dropdown.Item>
+          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'rum' } }} eventKey="rum" >Rum</Dropdown.Item>
+          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'gin' } }} eventKey="gin" >Gin</Dropdown.Item>
+          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'tequila' } }} eventKey="tequila" >Tequila</Dropdown.Item>
+        </DropdownButton>
+      </Dropdown>
+      <Button className='btn randomDrinksButton' type='submit' variant='secondary' onClick={tenDrinks}>Get 10 random cocktails</Button>
+
       {randomDrinks.map((drink) => (
-        <Link className='randomDrinkList' to={{ pathname: `/${drink.idDrink}`, state: { id: `${drink.idDrink}`} }} key={drink.idDrink}>{drink.strDrink}</Link>
+        <ul>
+          <li key={drink.idDrink}>
+            <Link to={{ pathname: `/drink/${drink.idDrink}`, state: { id: `${drink.idDrink}` } }} key={drink.idDrink}>
+              {drink.strDrink}
+            </Link>
+          </li>
+        </ul>
       ))}
+
     </div>
   );
 };
 
-export default Home;
+export default Home 
