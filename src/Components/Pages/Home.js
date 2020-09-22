@@ -6,7 +6,6 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import { DropdownButton } from 'react-bootstrap'
 
 const Home = (props) => {
-  console.log('props are', props)
   const [randomDrinks, setRandomDrinks] = useState([]);
   const [alcohol, setAlcohol] = useState([]);
 
@@ -30,13 +29,8 @@ const Home = (props) => {
   };
 
   const onSelect = (e) => {
-    // e.preventDefault()
-    console.log('selection was made')
-    console.log(e)
     setAlcohol(e)
   }
-
-  console.log(alcohol)
 
   // Render a button to invoke the axios call from above
   // Display each drink as a Link
@@ -46,11 +40,11 @@ const Home = (props) => {
     <div>
       <Dropdown>
         <DropdownButton onSelect={onSelect} title='liquor'>
-          <Dropdown.Item eventKey="vodka" href="/baseliquor/vodka">Vodka</Dropdown.Item>
-          <Dropdown.Item eventKey="whiskey" href="/baseliquor/alcohol">Whiskey</Dropdown.Item>
-          <Dropdown.Item eventKey="rum" href="#/action-3">Rum</Dropdown.Item>
-          <Dropdown.Item eventKey="gin" href="#/action-4">Gin</Dropdown.Item>
-          <Dropdown.Item eventKey="tequila" href="#/action-5">Tequila</Dropdown.Item>
+          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'vodka' } }} eventKey="vodka" >Vodka</Dropdown.Item>
+          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'scotch' } }} eventKey="scotch" >Scotch</Dropdown.Item>
+          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'rum' } }} eventKey="rum" >Rum</Dropdown.Item>
+          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'gin' } }} eventKey="gin" >Gin</Dropdown.Item>
+          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'tequila' } }} eventKey="tequila" >Tequila</Dropdown.Item>
         </DropdownButton>
       </Dropdown>
       <Button className='btn randomDrinksButton' type='submit' variant='secondary' onClick={tenDrinks}>Get 10 random cocktails</Button>

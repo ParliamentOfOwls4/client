@@ -5,12 +5,8 @@ import { ImListNumbered } from 'react-icons/im';
 import { GrWorkshop } from 'react-icons/gr';
 import Loading from '../assets/Loading.js'
 
-// import { Link } from 'react-router-dom'
-
 const Drink = (props) => {
     const [drink, setDrink] = useState(null);
-    console.log('Drink.js props ', props);
-
 
     // Set up "Lookup full cocktail details by ID" request to API
     // with id from clicked Link component in Home.js (params)
@@ -28,22 +24,15 @@ const Drink = (props) => {
         },
     };
 
-
     // Only thing I changed, added useEffect to call api
     useEffect(() => {
         axios(config)
             .then((res) => setDrink(res.data.drinks))
             .catch(console.error);
     }, []);
-    console.log(drink);
-    // console.log(drink[0].strDrinkThumb);
-    if (!drink) {
-        console.log('waittt...');
-    }
 
     const ingredients = [];
     if (drink) {
-        console.log(drink);
         for (let i = 1; i <= 20; i++) {
             if (drink[0][`strIngredient${i}`]) {
                 ingredients.push(
@@ -54,8 +43,6 @@ const Drink = (props) => {
             }
         }
     }
-
-    console.log(ingredients);
 
     if (!drink) {
         return <Loading />;
