@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { DropdownButton } from 'react-bootstrap';
 import Hero from '../Layout/Hero';
@@ -10,6 +11,7 @@ import { LoremIpsum } from 'react-lorem-ipsum';
 const Home = (props) => {
   const [randomDrinks, setRandomDrinks] = useState([]);
   const [alcohol, setAlcohol] = useState([]);
+  const [searchIng, setSearchIng] = useState('');
 
   // Make call to Liquor API to fetch 10 random drinks
   const tenDrinks = async () => {
@@ -34,6 +36,15 @@ const Home = (props) => {
     setAlcohol(e);
   };
 
+  const handleChange = (event) => {
+    setSearchIng(event.target.value);
+    console.log(searchIng);
+  };
+
+  const searchByIng = (event) => {
+    event.preventDefault();
+    console.log(searchIng);
+  };
   // Render a button to invoke the axios call from above
   // Display each drink as a Link
   // Pass the id down through the link, accessible on the next page via props.location.state.id
@@ -103,7 +114,26 @@ const Home = (props) => {
       >
         Get 10 random cocktails
       </Button>
-
+      <Form>
+        <Form.Control
+          value={searchIng}
+          onChange={handleChange}
+          placeholder='Search by ingredients...'
+        />
+        <Button
+          as={Link}
+          to={{
+            pathname: '/search/result',
+            state: { selection: `${searchIng}` },
+          }}
+          eventKey={searchIng}
+          variant='secondary'
+          onSubmit={searchByIng}
+          type='submit'
+        >
+          Search
+        </Button>
+      </Form>
       {randomDrinks.map((drink) => (
         <ul>
           <li key={drink.idDrink}>
