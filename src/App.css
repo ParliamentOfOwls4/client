@@ -2,29 +2,64 @@
 /* font-family: 'Libre Baskerville', serif; */
 
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
-
 /* font-family: 'Major Mono Display', monospace; */
 
 @import url('https://fonts.googleapis.com/css2?family=Sirin+Stencil&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
-/* font-family: 'Sirin Stencil', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap");
+
+/* ============== Hero.js ================= */
+
+.hero-image {
+  background-image: linear-gradient(rgba(255, 230, 0, 1), rgba(255, 230, 0, .8)), url("Components/assets/DancingPeople.jpeg");
+  /* background-color: #FFE600; */
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;}
+
+  .hero-logo {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    padding-bottom: 30px;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  .hero-slogan {
+    position: absolute;
+    font-family: 'Permanent Marker', cursive;
+    bottom: 0px;
+    font-size: 40px;
+  }
+
+/* ============== NavBar ================= */
 
 .nav {
-  background-color: #b3a394;
+  background-color: black;
   width: 100%;
   height: 80px;
   display: flex;
   flex-direction: row-reverse;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .navLinks {
-  font-family: 'Sirin Stencil', cursive;
-  font-size: 35px;
+  font-family: 'Lora', cursive;
+  font-size: 45px;
+  letter-spacing: 3px;
   display: inline;
-  margin: 5px 30px;
+  margin: 30px;
+  padding-top: 20px;
+  color: white;
 }
 .navLinks a {
-  color: #fff;
+  color: black;
   text-decoration: none;
 }
 
@@ -52,6 +87,9 @@ a:visited {
   color: inherit;
 }
 
+
+/* ============== Drink.js page ================= */
+
 .randomDrinkList {
   font-family: 'Libre Baskerville', serif;
   align-items: center;
@@ -77,6 +115,9 @@ a:visited {
   margin-top: 0px;
   margin-bottom: 10px;
 }
+
+
+/* ============== Alcohol.js page ================= */
 
 .alcoholDrinkList {
   /* font-family: 'Libre Baskerville', serif; */
