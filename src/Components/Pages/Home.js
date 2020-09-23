@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
-import Dropdown from 'react-bootstrap/Dropdown'
-import { DropdownButton } from 'react-bootstrap'
-import Hero from '../Layout/Hero'
-import { LoremIpsum } from 'react-lorem-ipsum'; 
+import Dropdown from 'react-bootstrap/Dropdown';
+import { DropdownButton } from 'react-bootstrap';
+import Hero from '../Layout/Hero';
+import { LoremIpsum } from 'react-lorem-ipsum';
 
 const Home = (props) => {
   const [randomDrinks, setRandomDrinks] = useState([]);
@@ -31,40 +31,97 @@ const Home = (props) => {
   };
 
   const onSelect = (e) => {
-    setAlcohol(e)
-  }
+    setAlcohol(e);
+  };
 
   // Render a button to invoke the axios call from above
   // Display each drink as a Link
-  // Pass the id down through the link, accessible on the next page via props.location.state.id 
+  // Pass the id down through the link, accessible on the next page via props.location.state.id
   // Set each drink's key to the id of the drink in the database (appeasing the linter)
   return (
     <div>
       {/* <Hero /> */}
       <Dropdown>
         <DropdownButton onSelect={onSelect} title='liquor'>
-          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'vodka' } }} eventKey="vodka" >Vodka</Dropdown.Item>
-          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'scotch' } }} eventKey="scotch" >Scotch</Dropdown.Item>
-          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'rum' } }} eventKey="rum" >Rum</Dropdown.Item>
-          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'gin' } }} eventKey="gin" >Gin</Dropdown.Item>
-          <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'tequila' } }} eventKey="tequila" >Tequila</Dropdown.Item>
+          <Dropdown.Item
+            as={Link}
+            to={{
+              pathname: '/baseliquor/alcohol',
+              state: { selection: 'vodka' },
+            }}
+            eventKey='vodka'
+          >
+            Vodka
+          </Dropdown.Item>
+          <Dropdown.Item
+            as={Link}
+            to={{
+              pathname: '/baseliquor/alcohol',
+              state: { selection: 'scotch' },
+            }}
+            eventKey='scotch'
+          >
+            Scotch
+          </Dropdown.Item>
+          <Dropdown.Item
+            as={Link}
+            to={{
+              pathname: '/baseliquor/alcohol',
+              state: { selection: 'rum' },
+            }}
+            eventKey='rum'
+          >
+            Rum
+          </Dropdown.Item>
+          <Dropdown.Item
+            as={Link}
+            to={{
+              pathname: '/baseliquor/alcohol',
+              state: { selection: 'gin' },
+            }}
+            eventKey='gin'
+          >
+            Gin
+          </Dropdown.Item>
+          <Dropdown.Item
+            as={Link}
+            to={{
+              pathname: '/baseliquor/alcohol',
+              state: { selection: 'tequila' },
+            }}
+            eventKey='tequila'
+          >
+            Tequila
+          </Dropdown.Item>
         </DropdownButton>
       </Dropdown>
-      <Button className='btn randomDrinksButton' type='submit' variant='secondary' onClick={tenDrinks}>Get 10 random cocktails</Button>
+      <Button
+        className='btn randomDrinksButton'
+        type='submit'
+        variant='secondary'
+        onClick={tenDrinks}
+      >
+        Get 10 random cocktails
+      </Button>
 
       {randomDrinks.map((drink) => (
         <ul>
           <li key={drink.idDrink}>
-            <Link to={{ pathname: `/drink/${drink.idDrink}`, state: { id: `${drink.idDrink}` } }} key={drink.idDrink}>
+            <Link
+              to={{
+                pathname: `/drink/${drink.idDrink}`,
+                state: { id: `${drink.idDrink}` },
+              }}
+              key={drink.idDrink}
+            >
               {drink.strDrink}
             </Link>
           </li>
-          <LoremIpsum p={2} />
+          {/* <LoremIpsum p={2} /> */}
         </ul>
       ))}
-
     </div>
   );
 };
 
-export default Home 
+export default Home;
