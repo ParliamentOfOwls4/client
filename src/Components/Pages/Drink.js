@@ -48,33 +48,35 @@ const Drink = (props) => {
         return <Loading />;
     } else {
         return (
-            <div className='single-drink'>
-                <h1>{drink[0].strDrink}</h1>
-                <img
+            <div className='single-drink-container'>
+                <img className='single-drink-image'
                     src={`${drink[0].strDrinkThumb}`}
-                    height='250'
-                    width='250'
                     alt='pic'
                 />
-                <p>
-                    <FaGlassMartiniAlt /> {'   '}
-                    <strong>Best Served In:</strong> {drink[0].strGlass}
-                </p>
-                <ImListNumbered />
-                {'   '} <strong>Ingredients:</strong>{' '}
-                <ul>
-                    <li>
+                <div className='single-drink-text-container'>
+                    <h1>{drink[0].strDrink}</h1>
+                    <p>
+                        <FaGlassMartiniAlt /> {'   '}
+                        <strong>Best Served In:</strong> {drink[0].strGlass}
+                    </p>
+                    <p>
+                        <ImListNumbered />
+                        {'   '} <strong>Ingredients:</strong>{' '}
                         <ul>
-                            {ingredients.map((ing) => (
-                                <li>{ing}</li>
-                            ))}
+                            <li>
+                                <ul>
+                                    {ingredients.map((ing) => (
+                                        <li>{ing}</li>
+                                    ))}
+                                </ul>
+                            </li>
                         </ul>
-                    </li>
-                </ul>
-                <p>
-                    <GrWorkshop /> {'   '}
-                    <strong>Instructions:</strong> {drink[0].strInstructions}
-                </p>
+                    </p>
+                    <p>
+                        <GrWorkshop /> {'   '}
+                        <strong>Instructions:</strong> {drink[0].strInstructions}
+                    </p>
+                </div>
             </div>
         );
     }

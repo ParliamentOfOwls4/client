@@ -88,7 +88,6 @@ a:visited {
 }
 
 
-/* ============== Drink.js page ================= */
 
 .randomDrinkList {
   font-family: 'Libre Baskerville', serif;
@@ -96,14 +95,6 @@ a:visited {
 }
 
 .randomDrinksButton {
-  justify-content: center;
-}
-
-.single-drink {
-  padding: 30px auto;
-  width: 70%;
-  font-family: 'Libre Baskerville', serif;
-  align-items: center;
   justify-content: center;
 }
 
@@ -115,6 +106,54 @@ a:visited {
   margin-top: 0px;
   margin-bottom: 10px;
 }
+
+/* ============== Drink.js page ================= */
+
+.single-drink-container {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  margin: 50px auto;
+  /* background-color: #FDF7E3; */
+  align-items: center;
+  position: relative;
+}
+
+.single-drink-image {
+  background-color: white;
+  height: 300px;
+  width: 300px;
+  z-index: 4;
+  margin-left: 40px;
+  margin-bottom: 200;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+  box-shadow: 5px 7px 13px #888888;
+}
+
+.single-drink-text-container {
+  min-height: 400px;
+  padding: 20px 30px 20px 200px;
+  display: flex;
+  flex-direction: column;
+  background-color: #F1F1F1;
+  z-index: 0;
+  margin: 20px 10px 10px 200px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+/* .single-drink {
+  padding: 30px auto;
+  width: 70%;
+  font-family: 'Libre Baskerville', serif;
+  align-items: center;
+  justify-content: center; */
+/* } */
+
+
 
 
 /* ============== Alcohol.js page ================= */

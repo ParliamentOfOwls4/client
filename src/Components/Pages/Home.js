@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown'
 import { DropdownButton } from 'react-bootstrap'
 import Hero from '../Layout/Hero'
+import { LoremIpsum } from 'react-lorem-ipsum'; 
 
 const Home = (props) => {
   const [randomDrinks, setRandomDrinks] = useState([]);
@@ -58,6 +59,7 @@ const Home = (props) => {
               {drink.strDrink}
             </Link>
           </li>
+          <LoremIpsum p={2} />
         </ul>
       ))}
 
