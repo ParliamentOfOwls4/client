@@ -4,6 +4,8 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown'
 import { DropdownButton } from 'react-bootstrap'
+import Hero from '../Layout/Hero'
+import { LoremIpsum } from 'react-lorem-ipsum'; 
 
 const Home = (props) => {
   const [randomDrinks, setRandomDrinks] = useState([]);
@@ -38,6 +40,7 @@ const Home = (props) => {
   // Set each drink's key to the id of the drink in the database (appeasing the linter)
   return (
     <div>
+      {/* <Hero /> */}
       <Dropdown>
         <DropdownButton onSelect={onSelect} title='liquor'>
           <Dropdown.Item as={Link} to={{ pathname: "/baseliquor/alcohol", state: { selection: 'vodka' } }} eventKey="vodka" >Vodka</Dropdown.Item>
@@ -56,6 +59,7 @@ const Home = (props) => {
               {drink.strDrink}
             </Link>
           </li>
+          <LoremIpsum p={2} />
         </ul>
       ))}
 
