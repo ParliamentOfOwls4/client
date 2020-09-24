@@ -16,7 +16,7 @@
       rgba(255, 230, 0, 1),
       rgba(255, 230, 0, 0.8)
     ),
-    url('Components/assets/DancingPeople.jpeg');
+    url('./assets/DancingPeople.jpeg');
   /* background-color: #FFE600; */
   height: 600px;
   background-position: center;
