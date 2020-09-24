@@ -6,6 +6,7 @@ import DrinkList from '../Utility/DrinkList';
 const SearchByIngResult = (props) => {
   const [searchResult, setSearchResult] = useState(null);
 
+<<<<<<< HEAD
   let searchInput = props.location.state.searchTerm;
 
   for (let i = 0; i < searchInput.length; i++) {
@@ -18,6 +19,9 @@ const SearchByIngResult = (props) => {
     }
   }
 
+=======
+  const searchInput = props.location.state.selection;
+>>>>>>> working on invalid search input
   const searchByIngConfig = {
     method: 'GET',
     url: 'https://the-cocktail-db.p.rapidapi.com/filter.php',
@@ -42,7 +46,19 @@ const SearchByIngResult = (props) => {
   if (!searchResult) {
     return <Loading />;
   } else {
+<<<<<<< HEAD
     return <DrinkList drinkData={searchResult} />;
+=======
+    if (searchResult === 'None Found') {
+      return <div>Please enter a correct alcohol name..</div>
+    } else {
+
+      console.log('what??', searchResult);
+      return <div>
+        <DrinkList drinkData={searchResult} />
+      </div>;
+    }
+>>>>>>> working on invalid search input
   }
 };
 
