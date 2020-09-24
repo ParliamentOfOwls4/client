@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
+import Loading from '../assets/Loading'
 
 const SearchByIngResult = (props) => {
   console.log(props);
@@ -23,12 +25,33 @@ const SearchByIngResult = (props) => {
 
   useEffect(() => {
     axios(searchByIngConfig)
-      .then((res) => setSearchResult(res.data.drink))
+      .then((res) => setSearchResult(res.data.drinks))
       .catch(console.error);
   }, []);
 
-  console.log('test', searchResult);
-  return <div></div>;
+  if (!searchResult) {
+    return <Loading />;
+  } else {
+    console.log('test', searchResult);
+    return <div>
+      {searchResult.map((drink) => (
+        <ul>
+          <li key={drink.idDrink}>
+            <Link
+              to={{
+                pathname: `/drink/${drink.idDrink}`,
+                state: { id: `${drink.idDrink}` },
+              }}
+              key={drink.idDrink}
+            >
+              {drink.strDrink}
+            </Link>
+          </li>
+          {/* <LoremIpsum p={2} /> */}
+        </ul>
+      ))}
+    </div>;
+  }
 };
 
 export default SearchByIngResult;
