@@ -7,6 +7,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { DropdownButton } from 'react-bootstrap';
 import Hero from '../Layout/Hero';
 import { LoremIpsum } from 'react-lorem-ipsum';
+import DrinkList from '../Utility/DrinkList'
 
 const Home = (props) => {
   const [randomDrinks, setRandomDrinks] = useState([]);
@@ -106,6 +107,7 @@ const Home = (props) => {
           </Dropdown.Item>
         </DropdownButton>
       </Dropdown>
+
       <Button
         className='btn randomDrinksButton'
         type='submit'
@@ -134,22 +136,7 @@ const Home = (props) => {
           Search
         </Button>
       </Form>
-      {randomDrinks.map((drink) => (
-        <ul>
-          <li key={drink.idDrink}>
-            <Link
-              to={{
-                pathname: `/drink/${drink.idDrink}`,
-                state: { id: `${drink.idDrink}` },
-              }}
-              key={drink.idDrink}
-            >
-              {drink.strDrink}
-            </Link>
-          </li>
-          {/* <LoremIpsum p={2} /> */}
-        </ul>
-      ))}
+      <DrinkList drinkData={randomDrinks} />
     </div>
   );
 };

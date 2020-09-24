@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import Loading from '../Utility/Loading'
+import DrinkList from '../Utility/DrinkList'
 
 const SearchByIngResult = (props) => {
   console.log(props);
@@ -34,22 +35,7 @@ const SearchByIngResult = (props) => {
   } else {
     console.log('test', searchResult);
     return <div>
-      {searchResult.map((drink) => (
-        <ul>
-          <li key={drink.idDrink}>
-            <Link
-              to={{
-                pathname: `/drink/${drink.idDrink}`,
-                state: { id: `${drink.idDrink}` },
-              }}
-              key={drink.idDrink}
-            >
-              {drink.strDrink}
-            </Link>
-          </li>
-          {/* <LoremIpsum p={2} /> */}
-        </ul>
-      ))}
+      <DrinkList drinkData={searchResult} />
     </div>;
   }
 };
