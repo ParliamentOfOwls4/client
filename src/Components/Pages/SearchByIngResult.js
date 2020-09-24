@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
-import Loading from '../assets/Loading'
+import Loading from '../Utility/Loading'
 
 const SearchByIngResult = (props) => {
   console.log(props);

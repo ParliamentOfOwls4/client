@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Loading from '../assets/Loading';
+import Loading from '../Utility/Loading';
 import axios from 'axios';
 
 const Alcohol = (props) => {

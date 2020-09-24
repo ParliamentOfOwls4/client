@@ -3,7 +3,7 @@ import axios from 'axios';
 import { FaGlassMartiniAlt } from 'react-icons/fa';
 import { ImListNumbered } from 'react-icons/im';
 import { GrWorkshop } from 'react-icons/gr';
-import Loading from '../assets/Loading.js';
+import Loading from '../Utility/Loading.js';
 
 const Drink = (props) => {
   const [drink, setDrink] = useState(null);
