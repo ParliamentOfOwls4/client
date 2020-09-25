@@ -5,14 +5,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { DropdownButton } from 'react-bootstrap';
-import Hero from '../Layout/Hero';
-import { LoremIpsum } from 'react-lorem-ipsum';
 import DrinkList from '../Utility/DrinkList';
 import { Redirect } from 'react-router-dom';
 
 const Home = (props) => {
   const [randomDrinks, setRandomDrinks] = useState([]);
-  const [alcohol, setAlcohol] = useState([]);
   const [searchIng, setSearchIng] = useState('');
   const [redirect, setRedirect] = useState(false);
 
@@ -33,10 +30,6 @@ const Home = (props) => {
       // set the randomDrinks state to the response that we get back from the API
       .then((res) => setRandomDrinks(res.data.drinks))
       .catch(console.error);
-  };
-
-  const onSelect = (e) => {
-    setAlcohol(e);
   };
 
   const handleChange = (event) => {
@@ -66,7 +59,7 @@ const Home = (props) => {
   return (
     <div>
       <Dropdown>
-        <DropdownButton onSelect={onSelect} title='liquor'>
+        <DropdownButton title='liquor'>
           <Dropdown.Item
             as={Link}
             to={{
@@ -143,15 +136,5 @@ const Home = (props) => {
     </div>
   );
 };
-
-// as={Link}
-//           to={{
-//             pathname: '/search/result',
-//             state: { selection: `${searchIng}` },
-//           }}
-//           eventKey={searchIng}
-//           variant='secondary'
-//           onSubmit={searchByIng}
-//           type='submit'
 
 export default Home;

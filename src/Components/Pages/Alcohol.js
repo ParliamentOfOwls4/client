@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Loading from '../Utility/Loading';
 import axios from 'axios';
-import DrinkList from '../Utility/DrinkList'
+import DrinkList from '../Utility/DrinkList';
 
 const Alcohol = (props) => {
   const [alcohol, setAlcohol] = useState(null);
@@ -29,6 +28,7 @@ const Alcohol = (props) => {
     axios(configDescription)
       .then((res) => setAlcohol(res.data.ingredients[0]))
       .catch(console.error);
+    // eslint-disable-next-line
   }, []);
 
   const configSelectedDrinks = {
@@ -49,6 +49,7 @@ const Alcohol = (props) => {
     axios(configSelectedDrinks)
       .then((res) => setAlcoholDrinks(res.data.drinks))
       .catch(console.error);
+    // eslint-disable-next-line
   }, []);
 
   if (!alcohol || !alcoholDrinks) {

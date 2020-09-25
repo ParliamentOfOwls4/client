@@ -1,28 +1,22 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
-import Loading from '../Utility/Loading'
-import DrinkList from '../Utility/DrinkList'
+import Loading from '../Utility/Loading';
+import DrinkList from '../Utility/DrinkList';
 
 const SearchByIngResult = (props) => {
-  console.log('props', props);
   const [searchResult, setSearchResult] = useState(null);
 
   let searchInput = props.location.state.searchTerm;
-  console.log('searchinput is', searchInput);
 
   for (let i = 0; i < searchInput.length; i++) {
     if (searchInput[i] === ' ') {
-      if (searchInput[i-1] === ',') {
-        searchInput = searchInput.replace(searchInput[i], '')
-      } else if (searchInput[i-1] !== ',') {
-        searchInput = searchInput.replace(searchInput[i], '_')
+      if (searchInput[i - 1] === ',') {
+        searchInput = searchInput.replace(searchInput[i], '');
+      } else if (searchInput[i - 1] !== ',') {
+        searchInput = searchInput.replace(searchInput[i], '_');
       }
     }
   }
-
-  console.log('searchinput is after loop is', searchInput);
-
 
   const searchByIngConfig = {
     method: 'GET',
@@ -42,18 +36,14 @@ const SearchByIngResult = (props) => {
     axios(searchByIngConfig)
       .then((res) => setSearchResult(res.data.drinks))
       .catch(console.error);
+    // eslint-disable-next-line
   }, []);
 
   if (!searchResult) {
     return <Loading />;
   } else {
-    console.log('test', searchResult);
-    return (
-      <DrinkList drinkData={searchResult} />
-    )
+    return <DrinkList drinkData={searchResult} />;
   }
 };
-
-
 
 export default SearchByIngResult;
