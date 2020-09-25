@@ -5,6 +5,8 @@ const DrinkList = (props) => {
     console.log('objective', props);
     if (!props.drinkData) {
         return (<div></div>)
+    } else if (props.drinkData == 'None Found') {
+        return (<div>Sorry! no drinks found with those ingredients, try again? Maybe put another search bar here?</div>)
     } else {
         return (
             <div>

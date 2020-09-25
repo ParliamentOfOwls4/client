@@ -5,11 +5,11 @@ import Loading from '../Utility/Loading'
 import DrinkList from '../Utility/DrinkList'
 
 const SearchByIngResult = (props) => {
-  console.log(props);
+  console.log('props', props);
   const [searchResult, setSearchResult] = useState(null);
 
-  const searchInput = props.location.state.selection;
-  console.log(searchInput);
+  const searchInput = props.location.state.searchTerm;
+  console.log('searchinput is', searchInput);
   const searchByIngConfig = {
     method: 'GET',
     url: 'https://the-cocktail-db.p.rapidapi.com/filter.php',
@@ -34,10 +34,12 @@ const SearchByIngResult = (props) => {
     return <Loading />;
   } else {
     console.log('test', searchResult);
-    return <div>
+    return (
       <DrinkList drinkData={searchResult} />
-    </div>;
+    )
   }
 };
+
+
 
 export default SearchByIngResult;

@@ -8,11 +8,13 @@ import { DropdownButton } from 'react-bootstrap';
 import Hero from '../Layout/Hero';
 import { LoremIpsum } from 'react-lorem-ipsum';
 import DrinkList from '../Utility/DrinkList'
+import { Redirect } from 'react-router-dom';
 
 const Home = (props) => {
   const [randomDrinks, setRandomDrinks] = useState([]);
   const [alcohol, setAlcohol] = useState([]);
   const [searchIng, setSearchIng] = useState('');
+  const [redirect, setRedirect] = useState(false)
 
   // Make call to Liquor API to fetch 10 random drinks
   const tenDrinks = async () => {
@@ -44,15 +46,15 @@ const Home = (props) => {
 
   const searchByIng = (event) => {
     event.preventDefault();
-    console.log(searchIng);
+    console.log('search button clicked', searchIng);
+    setRedirect(true)
   };
-  // Render a button to invoke the axios call from above
-  // Display each drink as a Link
-  // Pass the id down through the link, accessible on the next page via props.location.state.id
-  // Set each drink's key to the id of the drink in the database (appeasing the linter)
+
+  if (redirect) {
+    return <Redirect to= {{ pathname: '/search/result', state: { searchTerm: searchIng} }} />
+  }
   return (
     <div>
-      {/* <Hero /> */}
       <Dropdown>
         <DropdownButton onSelect={onSelect} title='liquor'>
           <Dropdown.Item
@@ -123,15 +125,7 @@ const Home = (props) => {
           placeholder='Search by ingredients...'
         />
         <Button
-          as={Link}
-          to={{
-            pathname: '/search/result',
-            state: { selection: `${searchIng}` },
-          }}
-          eventKey={searchIng}
-          variant='secondary'
-          onSubmit={searchByIng}
-          type='submit'
+          onClick={searchByIng}
         >
           Search
         </Button>
@@ -140,5 +134,15 @@ const Home = (props) => {
     </div>
   );
 };
+
+// as={Link}
+//           to={{
+//             pathname: '/search/result',
+//             state: { selection: `${searchIng}` },
+//           }}
+//           eventKey={searchIng}
+//           variant='secondary'
+//           onSubmit={searchByIng}
+//           type='submit'
 
 export default Home;
