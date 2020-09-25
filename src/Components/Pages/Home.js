@@ -41,12 +41,10 @@ const Home = (props) => {
 
   const handleChange = (event) => {
     setSearchIng(event.target.value);
-    console.log(searchIng);
   };
 
   const searchByIng = (event) => {
     event.preventDefault();
-    console.log('search button clicked', searchIng);
     let isSpaces = searchIng.split('').every((char) => char === ' ');
     // If user hasn't typed anything, don't let them hit enter and go to empty search result page
     if (searchIng === '') {
