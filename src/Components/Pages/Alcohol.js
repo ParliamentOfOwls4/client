@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Loading from '../assets/Loading';
+import Loading from '../Utility/Loading';
 import axios from 'axios';
+import DrinkList from '../Utility/DrinkList'
 
 const Alcohol = (props) => {
   const [alcohol, setAlcohol] = useState(null);
@@ -58,28 +59,7 @@ const Alcohol = (props) => {
         <Row>
           <Col>{alcohol.strDescription}</Col>
           <Col>
-            {alcoholDrinks.map((drink) => (
-              <ul>
-                <li className='alcoholDrinkListLink' key={drink.idDrink}>
-                  <div className='alcoholDrinkList'>
-                    <img
-                      src={`${drink.strDrinkThumb}`}
-                      height='80'
-                      width='80'
-                      alt='pic'
-                    />
-                    <Link
-                      to={{
-                        pathname: `/drink/${drink.idDrink}`,
-                        state: { id: `${drink.idDrink}` },
-                      }}
-                    >
-                      {drink.strDrink}
-                    </Link>
-                  </div>
-                </li>
-              </ul>
-            ))}
+            <DrinkList drinkData={alcoholDrinks} />
           </Col>
         </Row>
       </Container>
