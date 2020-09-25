@@ -7,14 +7,14 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { DropdownButton } from 'react-bootstrap';
 import Hero from '../Layout/Hero';
 import { LoremIpsum } from 'react-lorem-ipsum';
-import DrinkList from '../Utility/DrinkList'
+import DrinkList from '../Utility/DrinkList';
 import { Redirect } from 'react-router-dom';
 
 const Home = (props) => {
   const [randomDrinks, setRandomDrinks] = useState([]);
   const [alcohol, setAlcohol] = useState([]);
   const [searchIng, setSearchIng] = useState('');
-  const [redirect, setRedirect] = useState(false)
+  const [redirect, setRedirect] = useState(false);
 
   // Make call to Liquor API to fetch 10 random drinks
   const tenDrinks = async () => {
@@ -47,11 +47,23 @@ const Home = (props) => {
   const searchByIng = (event) => {
     event.preventDefault();
     console.log('search button clicked', searchIng);
-    setRedirect(true)
+    let isSpaces = searchIng.split('').every((char) => char === ' ');
+    // If user hasn't typed anything, don't let them hit enter and go to empty search result page
+    if (searchIng === '') {
+      setRedirect(false);
+    } else if (isSpaces) {
+      setRedirect(false);
+    } else {
+      setRedirect(true);
+    }
   };
-  
+
   if (redirect) {
-    return <Redirect to= {{ pathname: '/search/result', state: { searchTerm: searchIng} }} />
+    return (
+      <Redirect
+        to={{ pathname: '/search/result', state: { searchTerm: searchIng } }}
+      />
+    );
   }
   return (
     <div>
@@ -125,10 +137,7 @@ const Home = (props) => {
           onSubmit={searchByIng}
           placeholder='Search by ingredients...'
         />
-        <Button
-          type='submit'
-          onClick={searchByIng}
-        >
+        <Button type='submit' onClick={searchByIng}>
           Search
         </Button>
       </Form>
