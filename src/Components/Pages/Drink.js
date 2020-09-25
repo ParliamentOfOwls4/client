@@ -29,6 +29,7 @@ const Drink = (props) => {
     axios(config)
       .then((res) => setDrink(res.data.drinks))
       .catch(console.error);
+    // eslint-disable-next-line
   }, []);
 
   const ingredients = [];
@@ -69,16 +70,17 @@ const Drink = (props) => {
           <p>
             <ImListNumbered />
             {'   '} <strong>Ingredients:</strong>{' '}
-            <ul>
-              <li>
-                <ul>
-                  {ingredients.map((ing) => (
-                    <li>{ing}</li>
-                  ))}
-                </ul>
-              </li>
-            </ul>
           </p>
+          <ul>
+            <li>
+              <ul>
+                {ingredients.map((ing) => (
+                  <li key={ingredients.indexOf(ing)}>{ing}</li>
+                ))}
+              </ul>
+            </li>
+          </ul>
+
           <p>
             <GrWorkshop /> {'   '}
             <strong>Instructions:</strong> {drink[0].strInstructions}

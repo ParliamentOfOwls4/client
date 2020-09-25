@@ -1,22 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
 /* font-family: 'Libre Baskerville', serif; */
 
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
 /* font-family: 'Major Mono Display', monospace; */
 
-@import url('https://fonts.googleapis.com/css2?family=Sirin+Stencil&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sirin+Stencil&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap");
 
 /* ============== Hero.js ================= */
 
 .hero-image {
-  background-image: linear-gradient(
-      rgba(255, 230, 0, 1),
-      rgba(255, 230, 0, 0.8)
-    ),
-    url('./assets/DancingPeople.jpeg');
+  background-image: linear-gradient(rgba(255, 230, 0, 1), rgba(255, 230, 0, 0.8)), url("./assets/DancingPeople.jpeg");
   /* background-color: #FFE600; */
   height: 600px;
   background-position: center;
@@ -37,7 +33,7 @@
 
 .hero-slogan {
   position: absolute;
-  font-family: 'Permanent Marker', cursive;
+  font-family: "Permanent Marker", cursive;
   bottom: 0px;
   font-size: 40px;
 }
@@ -56,7 +52,7 @@
   z-index: 1;
 }
 .navLinks {
-  font-family: 'Lora', cursive;
+  font-family: "Lora", cursive;
   font-size: 45px;
   letter-spacing: 3px;
   margin: 0 20px;
@@ -92,7 +88,7 @@ a:visited {
 }
 
 .randomDrinkList {
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   align-items: center;
 }
 
@@ -169,7 +165,7 @@ a:visited {
 }
 
 .alcoholDrinkListLink {
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   font-size: 15px;
   display: inline;
   margin: auto;
