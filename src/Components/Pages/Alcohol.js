@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Loading from '../Utility/Loading';
 import axios from 'axios';
 import DrinkList from '../Utility/DrinkList'

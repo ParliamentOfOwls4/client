@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const DrinkList = (props) => {
     if (!props.drinkData) {
         return (<div></div>)
-    } else if (props.drinkData == 'None Found') {
+    } else if (props.drinkData === 'None Found') {
         return (<div>Sorry! no drinks found with those ingredients, try again? Maybe put another search bar here?</div>)
     } else {
         return (

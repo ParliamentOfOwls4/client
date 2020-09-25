@@ -5,8 +5,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { DropdownButton } from 'react-bootstrap';
-import Hero from '../Layout/Hero';
-import { LoremIpsum } from 'react-lorem-ipsum';
 import DrinkList from '../Utility/DrinkList';
 import { Redirect } from 'react-router-dom';
 
