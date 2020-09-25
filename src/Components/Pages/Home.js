@@ -49,7 +49,7 @@ const Home = (props) => {
     console.log('search button clicked', searchIng);
     setRedirect(true)
   };
-
+  
   if (redirect) {
     return <Redirect to= {{ pathname: '/search/result', state: { searchTerm: searchIng} }} />
   }
@@ -126,6 +126,7 @@ const Home = (props) => {
           placeholder='Search by ingredients...'
         />
         <Button
+          type='submit'
           onClick={searchByIng}
         >
           Search
