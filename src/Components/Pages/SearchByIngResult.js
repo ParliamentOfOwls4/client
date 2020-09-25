@@ -8,8 +8,22 @@ const SearchByIngResult = (props) => {
   console.log('props', props);
   const [searchResult, setSearchResult] = useState(null);
 
-  const searchInput = props.location.state.searchTerm;
+  let searchInput = props.location.state.searchTerm;
   console.log('searchinput is', searchInput);
+
+  for (let i = 0; i < searchInput.length; i++) {
+    if (searchInput[i] === ' ') {
+      if (searchInput[i-1] === ',') {
+        searchInput = searchInput.replace(searchInput[i], '')
+      } else if (searchInput[i-1] !== ',') {
+        searchInput = searchInput.replace(searchInput[i], '_')
+      }
+    }
+  }
+
+  console.log('searchinput is after loop is', searchInput);
+
+
   const searchByIngConfig = {
     method: 'GET',
     url: 'https://the-cocktail-db.p.rapidapi.com/filter.php',

@@ -122,6 +122,7 @@ const Home = (props) => {
         <Form.Control
           value={searchIng}
           onChange={handleChange}
+          onSubmit={searchByIng}
           placeholder='Search by ingredients...'
         />
         <Button

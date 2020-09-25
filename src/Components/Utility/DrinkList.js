@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const DrinkList = (props) => {
-    console.log('objective', props);
     if (!props.drinkData) {
         return (<div></div>)
     } else if (props.drinkData == 'None Found') {
