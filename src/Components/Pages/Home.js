@@ -64,7 +64,7 @@ const Home = (props) => {
             as={Link}
             to={{
               pathname: '/baseliquor/alcohol',
-              state: { selection: 'vodka' },
+              state: { selection: 'Vodka' },
             }}
             eventKey='vodka'
           >
@@ -74,7 +74,7 @@ const Home = (props) => {
             as={Link}
             to={{
               pathname: '/baseliquor/alcohol',
-              state: { selection: 'scotch' },
+              state: { selection: 'Scotch' },
             }}
             eventKey='scotch'
           >
@@ -84,7 +84,7 @@ const Home = (props) => {
             as={Link}
             to={{
               pathname: '/baseliquor/alcohol',
-              state: { selection: 'rum' },
+              state: { selection: 'Rum' },
             }}
             eventKey='rum'
           >
@@ -94,7 +94,7 @@ const Home = (props) => {
             as={Link}
             to={{
               pathname: '/baseliquor/alcohol',
-              state: { selection: 'gin' },
+              state: { selection: 'Gin' },
             }}
             eventKey='gin'
           >
@@ -104,7 +104,7 @@ const Home = (props) => {
             as={Link}
             to={{
               pathname: '/baseliquor/alcohol',
-              state: { selection: 'tequila' },
+              state: { selection: 'Tequila' },
             }}
             eventKey='tequila'
           >

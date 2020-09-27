@@ -55,13 +55,13 @@ const Drink = (props) => {
     return <Loading />;
   } else {
     return (
-      <div className='single-drink-container'>
+      <div className='drink-page-container'>
         <img
-          className='single-drink-image'
+          className='drink-page-image'
           src={`${drink[0].strDrinkThumb}`}
           alt='pic'
         />
-        <div className='single-drink-text-container'>
+        <div className='drink-page-text-container'>
           <h1>{drink[0].strDrink}</h1>
           <p>
             <FaGlassMartiniAlt /> {'   '}
