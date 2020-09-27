@@ -112,16 +112,7 @@ const Home = (props) => {
           </Dropdown.Item>
         </DropdownButton>
       </Dropdown>
-
-      <Button
-        className='btn randomDrinksButton'
-        type='submit'
-        variant='secondary'
-        onClick={tenDrinks}
-      >
-        Get 10 random cocktails
-      </Button>
-      <Form>
+      <Form className='search-bar-container'>
         <Form.Control
           value={searchIng}
           onChange={handleChange}
@@ -132,6 +123,14 @@ const Home = (props) => {
           Search
         </Button>
       </Form>
+      <Button
+        className='btn random-drinks-button'
+        type='submit'
+        variant='secondary'
+        onClick={tenDrinks}
+      >
+        Get 10 random cocktails
+      </Button>
       <DrinkList drinkData={randomDrinks} />
     </div>
   );

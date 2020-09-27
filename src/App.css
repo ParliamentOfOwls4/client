@@ -153,28 +153,21 @@ a:visited {
   position: relative;
 }
 
+/* ============== Home.js ============== */
 
-/* vvvvvvv Do we need these anymore? vvvvvvvvv */
-
-.randomDrinkList {
-  font-family: "Libre Baskerville", serif;
-  align-items: center;
-}
-
-.randomDrinksButton {
+.random-drinks-button {
   justify-content: center;
 }
 
-/* ^^^^^^^^ Do we need these anymore? ^^^^^^^^ */
-
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  padding: 5px;
+}
 
 .btn {
   margin: 5px;
-}
-
-.randomDrinksButton {
-  margin-top: 0px;
-  margin-bottom: 10px;
 }
 
 /* ============== Drink.js page ================= */
