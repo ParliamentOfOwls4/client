@@ -23,7 +23,7 @@ const DrinkList = (props) => {
                   width='80'
                   alt='pic'
                 />
-            <li className='drink-list-link' key={drink.idDrink}>                
+            <li className='drink-list-text' key={drink.idDrink}>                
                 <Link
                   to={{
                     pathname: `/drink/${drink.idDrink}`,
