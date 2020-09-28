@@ -9,7 +9,7 @@ const Alcohol = (props) => {
   const [alcoholDrinks, setAlcoholDrinks] = useState(null);
   const [readMore, setReadMore] = useState(false)
   const selection = props.location.state.selection;
-  const readMoreCheck = readMore ? ' (read less) <<' : '(...read more) >>'
+  const readMoreCheck = readMore ? ' (read less) <<' : '...read more >>'
 
   // Make request to "Search cocktail by name" to get an "about this type of alcohol blurb"
   const configDescription = {
@@ -61,7 +61,7 @@ const Alcohol = (props) => {
   if (!alcohol || !alcoholDrinks) {
     return <Loading />;
   } else {
-    const shortDescription = alcohol.strDescription.substr(0, 200)
+    const shortDescription = alcohol.strDescription.substr(0, 500)
     const { strDescription } = alcohol
     return (
       <Container>
