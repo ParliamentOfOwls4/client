@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/JiggyLogoTransparent.png';
+import SearchBar from '../Utility/SearchBar';
 
 const NavBar = () => {
   return (
@@ -8,7 +9,8 @@ const NavBar = () => {
       <a href='/'>
         <img className='logo' src={logo} alt='logo' height='85' width='110' />
       </a>
-      {/* <p className='logo'>Jigr</p> */}
+      <SearchBar />
+
       <Link
         className='navLinks'
         style={{ color: '#fff', textDecoration: 'none' }}
