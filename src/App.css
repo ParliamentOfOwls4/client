@@ -227,3 +227,7 @@ a:visited {
 .alcoholDrinkListLink a {
   text-decoration: none;
 }
+
+.read-more-link {
+  cursor: pointer;
+}

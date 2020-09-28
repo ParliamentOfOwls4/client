@@ -6,11 +6,10 @@ import DrinkList from '../Utility/DrinkList';
 
 const Alcohol = (props) => {
   const [alcohol, setAlcohol] = useState(null);
-  const [shortDescription, setShortDescription] = useState(null);
   const [alcoholDrinks, setAlcoholDrinks] = useState(null);
   const [readMore, setReadMore] = useState(false)
   const selection = props.location.state.selection;
-  const readMoreCheck = readMore ? '..read less <<' : '..read more >>'
+  const readMoreCheck = readMore ? ' (read less) <<' : '(...read more) >>'
 
   // Make request to "Search cocktail by name" to get an "about this type of alcohol blurb"
   const configDescription = {
@@ -30,7 +29,6 @@ const Alcohol = (props) => {
   useEffect(() => {
     axios(configDescription)
       .then((res) => setAlcohol(res.data.ingredients[0]))
-      .then((res) => setShortDescription(res.data.ingredients[0].strDescription.substr(0, 200)))
 
       .catch(console.error);
     // eslint-disable-next-line
@@ -63,18 +61,16 @@ const Alcohol = (props) => {
   if (!alcohol || !alcoholDrinks) {
     return <Loading />;
   } else {
-    // const shortDescription = alcohol.strDescription.substr(0, 200)
+    const shortDescription = alcohol.strDescription.substr(0, 200)
     const { strDescription } = alcohol
-    // const fullDescription = alcohol.strDescription
-    console.log('here!!!', shortDescription);
     return (
       <Container>
         <div className='alcohol-page-title'>{selection}</div>
         <Row>
 
-          <Col xs={4} className='alcohol-page-description'> {readMore ? { strDescription } : { shortDescription }}
+          <Col xs={4} className='alcohol-page-description'> {readMore ? strDescription : shortDescription }
 
-            < a onClick={() => { setReadMore(!readMore) }}>{readMoreCheck} </a>
+            < a className='read-more-link' onClick={() => { setReadMore(!readMore) }}>{readMoreCheck} </a>
 
           </Col>
 
