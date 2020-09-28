@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Components/Pages/Home';
 import Drink from './Components/Pages/Drink';
-import SearchByIngResult from './Components/Pages/SearchByIngResult';
+import SearchByIngResult from './Components/Pages/SearchResult';
 import Alcohol from './Components/Pages/Alcohol';
 import Hero from './Components/Layout/Hero';
 
@@ -23,8 +23,7 @@ function App(props) {
           <Route exact path='/drink/:id' component={Drink} />
           <Route exact path='/baseliquor/alcohol' component={Alcohol} />
           <Route
-            exact
-            path='/search/result'
+            path='/search/'
             render={(props) => <SearchByIngResult {...props} />}
           />
 
