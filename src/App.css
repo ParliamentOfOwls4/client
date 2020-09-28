@@ -19,23 +19,29 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-logo {
-  text-align: center;
+  /* text-align: center; */
   position: relative;
+  width: 500px;
   top: 50%;
   left: 50%;
-  padding-bottom: 30px;
+  margin-top: -40px;
+  /* padding-bottom: 40px; */
   transform: translate(-50%, -50%);
   color: white;
 }
 
 .hero-slogan {
-  position: absolute;
+  position: relative;
   font-family: "Permanent Marker", cursive;
   bottom: 0px;
   font-size: 40px;
+  margin-top: 50px;
+  text-align: center;
 }
 
 /* ============== NavBar ================= */
@@ -87,27 +93,86 @@ a:visited {
   color: inherit;
 }
 
-.randomDrinkList {
-  font-family: "Libre Baskerville", serif;
+/* ========== DrinkList Component =========== */
+
+.drink-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 10px auto;
+  /* background-color: #FDF7E3; */
   align-items: center;
+  position: relative;
+  max-width: 500px;
 }
 
-.randomDrinksButton {
+.drink-list-item-container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 60px auto;
+  /* background-color: #8d95ff; */
+  align-items: center;
+  position: relative;
+}
+
+.drink-list-image {
+  background-color: white;
+  height: 100px;
+  width: 100px;
+  z-index: 4;
+  margin-left: -40px;
+  /* margin-bottom: 200; */
+  position: relative;
+  /* top: 0;
+  left: 0; */
+  border-radius: 3px;
+  box-shadow: 5px 7px 13px #888888;
+}
+
+.drink-list-item-container {
+  min-height: 150px;
+  padding: 20px 20px 20px 20px;
+  display: flex;
+  /* flex-direction: row; */
+  background-color: #f1f1f1;
+  z-index: 0;
+  margin: 20px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.drink-list-text {
+  font-family: "Libre Baskerville", serif;
+  font-size: 25px;
+  display: inline;
+  margin: auto;
+  color: black;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+/* ============== Home.js ============== */
+
+.random-drinks-button {
   justify-content: center;
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  padding: 5px;
 }
 
 .btn {
   margin: 5px;
 }
 
-.randomDrinksButton {
-  margin-top: 0px;
-  margin-bottom: 10px;
-}
-
 /* ============== Drink.js page ================= */
 
-.single-drink-container {
+.drink-page-container {
   display: flex;
   flex-direction: row;
   width: 70%;
@@ -117,7 +182,7 @@ a:visited {
   position: relative;
 }
 
-.single-drink-image {
+.drink-page-image {
   background-color: white;
   height: 300px;
   width: 300px;
@@ -131,7 +196,7 @@ a:visited {
   box-shadow: 5px 7px 13px #888888;
 }
 
-.single-drink-text-container {
+.drink-page-text-container {
   min-height: 400px;
   padding: 20px 30px 20px 200px;
   display: flex;
@@ -143,35 +208,20 @@ a:visited {
   font-size: 20px;
 }
 
-/* .single-drink {
-  padding: 30px auto;
-  width: 70%;
-  font-family: 'Libre Baskerville', serif;
-  align-items: center;
-  justify-content: center; */
-/* } */
-
 /* ============== Alcohol.js page ================= */
 
-.alcoholDrinkList {
-  /* font-family: 'Libre Baskerville', serif; */
-  border: 0.5px solid #000;
-  box-shadow: 3px 5px 10px #888888;
-  border-radius: 4px;
-  background-color: #cdd7d6;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+.alcohol-page-title {
+  text-align: center;
+  font-size: 45px;
 }
 
-.alcoholDrinkListLink {
-  font-family: "Libre Baskerville", serif;
-  font-size: 15px;
-  display: inline;
-  margin: auto;
-  color: #fff;
-  align-items: center;
-  position: relative;
+.alcohol-page-description {
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+.alcohol-page-drink-list {
+  /* Styles in here will override drinklist component and be specific to the alcohol page */
 }
 
 .alcoholDrinkListLink a {

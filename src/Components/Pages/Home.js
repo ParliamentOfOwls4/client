@@ -64,7 +64,7 @@ const Home = (props) => {
             as={Link}
             to={{
               pathname: '/baseliquor/alcohol',
-              state: { selection: 'vodka' },
+              state: { selection: 'Vodka' },
             }}
             eventKey='vodka'
           >
@@ -74,7 +74,7 @@ const Home = (props) => {
             as={Link}
             to={{
               pathname: '/baseliquor/alcohol',
-              state: { selection: 'scotch' },
+              state: { selection: 'Scotch' },
             }}
             eventKey='scotch'
           >
@@ -84,7 +84,7 @@ const Home = (props) => {
             as={Link}
             to={{
               pathname: '/baseliquor/alcohol',
-              state: { selection: 'rum' },
+              state: { selection: 'Rum' },
             }}
             eventKey='rum'
           >
@@ -94,7 +94,7 @@ const Home = (props) => {
             as={Link}
             to={{
               pathname: '/baseliquor/alcohol',
-              state: { selection: 'gin' },
+              state: { selection: 'Gin' },
             }}
             eventKey='gin'
           >
@@ -104,7 +104,7 @@ const Home = (props) => {
             as={Link}
             to={{
               pathname: '/baseliquor/alcohol',
-              state: { selection: 'tequila' },
+              state: { selection: 'Tequila' },
             }}
             eventKey='tequila'
           >
@@ -112,16 +112,7 @@ const Home = (props) => {
           </Dropdown.Item>
         </DropdownButton>
       </Dropdown>
-
-      <Button
-        className='btn randomDrinksButton'
-        type='submit'
-        variant='secondary'
-        onClick={tenDrinks}
-      >
-        Get 10 random cocktails
-      </Button>
-      <Form>
+      <Form className='search-bar-container'>
         <Form.Control
           value={searchIng}
           onChange={handleChange}
@@ -132,6 +123,14 @@ const Home = (props) => {
           Search
         </Button>
       </Form>
+      <Button
+        className='btn random-drinks-button'
+        type='submit'
+        variant='secondary'
+        onClick={tenDrinks}
+      >
+        Get 10 random cocktails
+      </Button>
       <DrinkList drinkData={randomDrinks} />
     </div>
   );

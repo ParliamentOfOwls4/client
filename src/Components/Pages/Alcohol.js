@@ -57,9 +57,10 @@ const Alcohol = (props) => {
   } else {
     return (
       <Container>
+        <div className='alcohol-page-title'>{selection}</div>
         <Row>
-          <Col>{alcohol.strDescription}</Col>
-          <Col>
+          <Col xs={4} className='alcohol-page-description'>{alcohol.strDescription}</Col>
+          <Col xs={8} className='alcohol-page-drink-list'>
             <DrinkList drinkData={alcoholDrinks} />
           </Col>
         </Row>
