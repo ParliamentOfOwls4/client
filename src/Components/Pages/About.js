@@ -10,12 +10,9 @@ import Thanh from '../../assets/Thanh2.png';
 const About = () => {
   return (
     <div className='about-container'>
-      <h2>The app:</h2>
+      <h2>About this app:</h2>
       <div className='about-app'>
-        About the app Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Quod iste nesciunt provident reiciendis nulla, consequatur ea.
-        Praesentium tenetur quia, sunt placeat delectus, a laboriosam
-        consequuntur asperiores voluptates quidem dolorum dignissimos.
+      This React application is a pandemic-inspired collaboration between three friends. We connected to RapidAPI's "Cocktail DB" database and API. It allows you to search for cocktails you can make, just tell us which alcohols and ingredients you have in your liquor cabinet. If you're 'Feeling Jiggy' we'll suggest 10 random drinks to make.
       </div>
 
       <h2>About us:</h2>
@@ -26,7 +23,7 @@ const About = () => {
           </div>
           <div className='bio'>
             <h2>Thanh Nguyen</h2>
-            Hello, My name is Thanh. I and my friends created this application
+            Hello, My name is Thanh. My friends and I created this application
             to practice our skills as developers. We are very enthusiastic to
             learn and explore the technological world.
             <div className='about-icons'>
