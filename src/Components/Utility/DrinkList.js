@@ -6,9 +6,8 @@ const DrinkList = (props) => {
     return <div></div>;
   } else if (props.drinkData === 'None Found') {
     return (
-      <div>
-        Sorry! no drinks found with those ingredients, try again? Maybe put
-        another search bar here?
+      <div className='none-found-message'>
+        Sorry! We couldn't find any drinks with those ingredients, click back to the home page to try again!
       </div>
     );
   } else {

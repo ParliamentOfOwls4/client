@@ -3,13 +3,14 @@ import { Row, Col, Container } from 'react-bootstrap';
 import Loading from '../Utility/Loading';
 import axios from 'axios';
 import DrinkList from '../Utility/DrinkList';
+import { AiOutlineRead } from 'react-icons/ai';
 
 const Alcohol = (props) => {
   const [alcohol, setAlcohol] = useState(null);
   const [alcoholDrinks, setAlcoholDrinks] = useState(null);
   const [readMore, setReadMore] = useState(false)
   const selection = props.location.state.selection;
-  const readMoreCheck = readMore ? ' (read less) <<' : '...read more >>'
+  const readMoreCheck = readMore ? <p> (read less) <AiOutlineRead /> </p> : <p> ...read more <AiOutlineRead /></p>
 
   // Make request to "Search cocktail by name" to get an "about this type of alcohol blurb"
   const configDescription = {
