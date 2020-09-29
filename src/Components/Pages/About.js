@@ -60,11 +60,7 @@ const About = () => {
           </div>
           <div className='bio'>
             <h2>Daniel Powers</h2>
-            Hello, My name is Thanh. I'm one of the software engineers that
-            built this app. Lorem ipsum dolor sit amet consectetur, adipisicing
-            elit. Deserunt adipisci, illo nihil iure eum culpa in quo facere
-            accusantium quas illum ullam error consequuntur nesciunt odit fugit
-            maxime numquam. Quas?
+            A people person with a passion for tech, this lifelong New Englander is new to the Bay Area and ready to contribute to your team's projects!
             <div className='about-icons'>
               <a
                 href='https://github.com/Danpowers24'
