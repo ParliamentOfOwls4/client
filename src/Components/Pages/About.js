@@ -26,7 +26,7 @@ const About = () => {
                     </div>
                     <div className="bio">
                         <h2>Thanh Nguyen</h2>
-                        Hello, My name is Thanh. I'm one of the software engineers that built this app. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt adipisci, illo nihil iure eum culpa in quo facere accusantium quas illum ullam error consequuntur nesciunt odit fugit maxime numquam. Quas?
+                        Hello, My name is Thanh. I and my friends created this application to practice our skills as developers. We are very enthusiastic to learn and explore the technological world.
                     <div className='about-icons'>
                             <a href="https://github.com/TN-space" target="_blank" title="GitHub"><FaGithub /></a>
                             <a href="https://www.linkedin.com/in/tnguyens" target="_blank" title='LinkedIn'><FaLinkedin /></a>
