@@ -3,9 +3,9 @@ import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { BsPersonLinesFill } from 'react-icons/bs';
 import { GrLike } from 'react-icons/gr';
-import Dan from '../../assets/Dan.png';
-import Ross from '../../assets/Ross.png';
-import Thanh from '../../assets/Thanh.png';
+import Dan from '../../assets/Dan2.png';
+import Ross from '../../assets/Ross2.png';
+import Thanh from '../../assets/Thanh2.png';
 
 const About = () => {
   return (
