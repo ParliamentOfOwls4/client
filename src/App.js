@@ -5,6 +5,7 @@ import Drink from './Components/Pages/Drink';
 import SearchByIngResult from './Components/Pages/SearchByIngResult';
 import Alcohol from './Components/Pages/Alcohol';
 import Hero from './Components/Layout/Hero';
+import About from './Components/Pages/About'
 
 import NavBar from './Components/Layout/NavBar';
 import './App.css';
@@ -28,8 +29,8 @@ function App(props) {
             render={(props) => <SearchByIngResult {...props} />}
           />
 
-          {/* <Route exact path='/about' component={About} />
-            <Route exact path='/register' component={Register} />
+          <Route exact path='/about' component={About} />
+          {/* <Route exact path='/register' component={Register} />
             <Route exact path='/login' component={Login} /> */}
         </Switch>
       </Router>
