@@ -15,6 +15,7 @@
   background-image: linear-gradient(rgba(255, 230, 0, 1), rgba(255, 230, 0, 0.8)), url("./assets/DancingPeople.jpeg");
   /* background-color: #FFE600; */
   height: 600px;
+  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -56,6 +57,7 @@
   position: sticky;
   top: 0;
   z-index: 1;
+  box-shadow: 5px 7px 7px rgba(0, 0, 0, .5);
 }
 .navLinks {
   font-family: "Lora", cursive;
@@ -106,38 +108,28 @@ a:visited {
   max-width: 500px;
 }
 
-.drink-list-item-container {
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  margin: 60px auto;
-  /* background-color: #8d95ff; */
-  align-items: center;
-  position: relative;
-}
-
 .drink-list-image {
   background-color: white;
   height: 100px;
   width: 100px;
   z-index: 4;
   margin-left: -40px;
-  /* margin-bottom: 200; */
   position: relative;
-  /* top: 0;
-  left: 0; */
   border-radius: 3px;
   box-shadow: 5px 7px 13px #888888;
 }
 
 .drink-list-item-container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 20px auto;
+  align-items: center;
+  position: relative;
   min-height: 150px;
   padding: 20px 20px 20px 20px;
-  display: flex;
-  /* flex-direction: row; */
   background-color: #f1f1f1;
   z-index: 0;
-  margin: 20px;
   border-radius: 5px;
   font-size: 20px;
 }
@@ -153,10 +145,25 @@ a:visited {
   position: relative;
 }
 
+.none-found-message {
+  font-size: 25px;
+  text-align: center;
+  padding-top: 15px;
+}
+
 /* ============== Home.js ============== */
 
-.random-drinks-button {
-  justify-content: center;
+.home-container {
+  padding-top: 8px;
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #888888;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .search-bar-container {
@@ -166,8 +173,10 @@ a:visited {
   padding: 5px;
 }
 
-.btn {
-  margin: 5px;
+.random-drinks-message {
+  text-align: center;
+  font-size: 25px;
+  padding-top: 25px;
 }
 
 /* ============== Drink.js page ================= */
@@ -213,6 +222,7 @@ a:visited {
 .alcohol-page-title {
   text-align: center;
   font-size: 45px;
+  padding-top: 15px;
 }
 
 .alcohol-page-description {
@@ -230,4 +240,66 @@ a:visited {
 
 .read-more-link {
   cursor: pointer;
+}
+
+/* ============== About.js page ================= */
+.about-container {
+  padding-top: 50px;
+  display: block;
+}
+
+.about-app {
+  padding-bottom: 50px;
+  font-size: 25px;
+
+}
+
+.developer-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+
+}
+.content {
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 80%;
+  /* margin: -20px; */
+}
+
+.picture-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -40px;
+}
+.profile-picture {
+  background-color: white;
+  height: 200px;
+  width: 200px;
+  z-index: 4;
+  /* margin-left: -40px;
+  margin-top: -40px; */
+ 
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 5px 7px 13px #888888;
+
+}
+
+.bio {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  font-size: 22px;
+  padding: 60px 15px 10px 15px ;
+}
+
+.about-icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 120px;
+  font-size: 30px;
 }
