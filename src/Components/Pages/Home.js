@@ -58,80 +58,84 @@ const Home = (props) => {
   }
   return (
     <div>
+      <div className="home-container">
       <Dropdown>
-        <DropdownButton title='liquor'>
-          <Dropdown.Item
-            as={Link}
-            to={{
-              pathname: '/baseliquor/alcohol',
-              state: { selection: 'vodka' },
-            }}
-            eventKey='vodka'
-          >
-            Vodka
-          </Dropdown.Item>
-          <Dropdown.Item
-            as={Link}
-            to={{
-              pathname: '/baseliquor/alcohol',
-              state: { selection: 'scotch' },
-            }}
-            eventKey='scotch'
-          >
-            Scotch
-          </Dropdown.Item>
-          <Dropdown.Item
-            as={Link}
-            to={{
-              pathname: '/baseliquor/alcohol',
-              state: { selection: 'rum' },
-            }}
-            eventKey='rum'
-          >
-            Rum
-          </Dropdown.Item>
-          <Dropdown.Item
-            as={Link}
-            to={{
-              pathname: '/baseliquor/alcohol',
-              state: { selection: 'gin' },
-            }}
-            eventKey='gin'
-          >
-            Gin
-          </Dropdown.Item>
-          <Dropdown.Item
-            as={Link}
-            to={{
-              pathname: '/baseliquor/alcohol',
-              state: { selection: 'tequila' },
-            }}
-            eventKey='tequila'
-          >
-            Tequila
-          </Dropdown.Item>
-        </DropdownButton>
-      </Dropdown>
-
-      <Button
-        className='btn randomDrinksButton'
-        type='submit'
-        variant='secondary'
-        onClick={tenDrinks}
-      >
-        Get 10 random cocktails
-      </Button>
-      <Form>
-        <Form.Control
-          value={searchIng}
-          onChange={handleChange}
-          onSubmit={searchByIng}
-          placeholder='Search by ingredients...'
-        />
-        <Button type='submit' onClick={searchByIng}>
-          Search
+          <DropdownButton variant="outline-light" title='Choose Alcohol'>
+            <Dropdown.Item
+              as={Link}
+              to={{
+                pathname: '/baseliquor/alcohol',
+                state: { selection: 'Vodka' },
+              }}
+              eventKey='vodka'
+            >
+              Vodka
+            </Dropdown.Item>
+            <Dropdown.Item
+              as={Link}
+              to={{
+                pathname: '/baseliquor/alcohol',
+                state: { selection: 'Scotch' },
+              }}
+              eventKey='scotch'
+            >
+              Scotch
+            </Dropdown.Item>
+            <Dropdown.Item
+              as={Link}
+              to={{
+                pathname: '/baseliquor/alcohol',
+                state: { selection: 'Rum' },
+              }}
+              eventKey='rum'
+            >
+              Rum
+            </Dropdown.Item>
+            <Dropdown.Item
+              as={Link}
+              to={{
+                pathname: '/baseliquor/alcohol',
+                state: { selection: 'Gin' },
+              }}
+              eventKey='gin'
+            >
+              Gin
+            </Dropdown.Item>
+            <Dropdown.Item
+              as={Link}
+              to={{
+                pathname: '/baseliquor/alcohol',
+                state: { selection: 'Tequila' },
+              }}
+              eventKey='tequila'
+            >
+              Tequila
+            </Dropdown.Item>
+          </DropdownButton>
+        </Dropdown>
+        <Form className='search-bar-container'>
+          <Form.Control
+            className='search-bar'
+            value={searchIng}
+            onChange={handleChange}
+            onSubmit={searchByIng}
+            placeholder='Search by ingredients...'
+          />
+            <Button type='submit' className='search-button' variant="outline-light" onClick={searchByIng}>
+              Search
+            </Button>
+        </Form>
+        <Button
+          variant="outline-light"
+          className='random-drinks-button'
+          type='submit'
+          onClick={tenDrinks}
+        >
+          Feeling Jiggy?
         </Button>
-      </Form>
+      </div>
+      
+        {randomDrinks.length > 1 ? <div className='random-drinks-message'>Check out these 10 random drinks!</div> : ''}
       <DrinkList drinkData={randomDrinks} />
     </div>
   );
