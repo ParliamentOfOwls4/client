@@ -1,0 +1,27 @@
+/* ============== Home.js ============== */
+
+.home-container {
+  padding-top: 8px;
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  margin: auto;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #888888;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  padding: 5px;
+}
+
+.random-drinks-message {
+  text-align: center;
+  font-size: 25px;
+  padding-top: 25px;
+}

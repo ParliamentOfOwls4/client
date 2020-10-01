@@ -1,0 +1,49 @@
+/* ============== NavBar ================= */
+
+.nav {
+  background-color: black;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0px 3px 10px 2px rgba(0, 0, 0, 0.5);
+}
+.navLinks {
+  font-family: 'Lora', cursive;
+  font-size: 45px;
+  letter-spacing: 3px;
+  margin: 0 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo {
+  /* color: rgb(255, 254, 242);
+  font-family: 'Major Mono Display', monospace;
+  font-size: 35px; */
+  padding: 0 10px 5px 20px;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+ul {
+  /* margin: 0;
+  padding: 0; */
+  text-decoration: none;
+  list-style-type: none;
+}
+
+a:link,
+a:visited {
+  color: inherit;
+}

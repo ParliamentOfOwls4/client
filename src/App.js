@@ -5,10 +5,10 @@ import Drink from './Components/Pages/Drink';
 import SearchByIngResult from './Components/Pages/SearchByIngResult';
 import Alcohol from './Components/Pages/Alcohol';
 import Hero from './Components/Layout/Hero';
-import About from './Components/Pages/About'
+import About from './Components/Pages/About';
 
 import NavBar from './Components/Layout/NavBar';
-import './App.css';
+import './styles/App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App(props) {

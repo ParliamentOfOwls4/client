@@ -1,0 +1,24 @@
+/* ============== Alcohol.js page ================= */
+
+.alcohol-page-title {
+  text-align: center;
+  font-size: 45px;
+  padding-top: 15px;
+}
+
+.alcohol-page-description {
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+.alcohol-page-drink-list {
+  /* Styles in here will override drinklist component and be specific to the alcohol page */
+}
+
+.alcoholDrinkListLink a {
+  text-decoration: none;
+}
+
+.read-more-link {
+  cursor: pointer;
+}
