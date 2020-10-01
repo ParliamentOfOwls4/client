@@ -1,24 +1,21 @@
 /* ============== Alcohol.js page ================= */
 
-.alcohol-page-title {
-  text-align: center;
-  font-size: 45px;
-  padding-top: 15px;
-}
+.alcohol-page-container {
+  width: 100%;
+  height: 100vh;
 
-.alcohol-page-description {
-  font-size: 18px;
-  margin-top: 40px;
-}
+  .alcohol-page-title {
+    text-align: center;
+    font-size: 45px;
+    padding-top: 15px;
+  }
 
-.alcohol-page-drink-list {
-  /* Styles in here will override drinklist component and be specific to the alcohol page */
-}
+  .alcohol-page-description {
+    font-size: 18px;
+    margin-top: 40px;
 
-.alcoholDrinkListLink a {
-  text-decoration: none;
-}
-
-.read-more-link {
-  cursor: pointer;
+    .read-more-button {
+      cursor: pointer;
+    }
+  }
 }

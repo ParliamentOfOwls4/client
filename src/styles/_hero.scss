@@ -15,25 +15,25 @@
   position: relative;
   display: flex;
   flex-direction: column;
-}
 
-.hero-logo {
-  /* text-align: center; */
-  position: relative;
-  width: 500px;
-  top: 50%;
-  left: 50%;
-  margin-top: -40px;
-  /* padding-bottom: 40px; */
-  transform: translate(-50%, -50%);
-  color: white;
-}
+  .hero-logo {
+    /* text-align: center; */
+    position: relative;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    margin-top: -40px;
+    /* padding-bottom: 40px; */
+    transform: translate(-50%, -50%);
+    color: white;
+  }
 
-.hero-slogan {
-  position: relative;
-  font-family: 'Permanent Marker', cursive;
-  bottom: 0px;
-  font-size: 40px;
-  margin-top: 50px;
-  text-align: center;
+  .hero-slogan {
+    position: relative;
+    font-family: 'Permanent Marker', cursive;
+    bottom: 0px;
+    font-size: 40px;
+    margin-top: 50px;
+    text-align: center;
+  }
 }

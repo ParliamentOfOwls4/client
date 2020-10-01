@@ -1,6 +1,6 @@
 /* ============== Home.js ============== */
 
-.home-container {
+.secondary-navbar {
   padding-top: 8px;
   display: flex;
   flex-direction: row;
@@ -8,16 +8,16 @@
   margin: auto;
   justify-content: space-around;
   align-items: center;
-  background-color: #888888;
+  background-color: $box-shadow-color;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-}
 
-.search-bar-container {
-  display: flex;
-  align-items: center;
-  width: 40%;
-  padding: 5px;
+  .search-bar-container {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    padding: 5px;
+  }
 }
 
 .random-drinks-message {

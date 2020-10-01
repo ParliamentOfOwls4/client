@@ -5,33 +5,36 @@
   flex-direction: row;
   width: 70%;
   margin: 50px auto;
-  /* background-color: #FDF7E3; */
   align-items: center;
   position: relative;
-}
 
-.drink-page-image {
-  background-color: white;
-  height: 300px;
-  width: 300px;
-  z-index: 4;
-  margin-left: 40px;
-  margin-bottom: 200;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 3px;
-  box-shadow: 5px 7px 13px #888888;
-}
+  .drink-page-image {
+    height: 300px;
+    width: 300px;
+    z-index: 4;
+    margin-left: 40px;
+    margin-bottom: 200;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    box-shadow: 5px 7px 13px $box-shadow-color;
+  }
 
-.drink-page-text-container {
-  min-height: 400px;
-  padding: 20px 30px 20px 200px;
-  display: flex;
-  flex-direction: column;
-  background-color: #f1f1f1;
-  z-index: 0;
-  margin: 20px 10px 10px 200px;
-  border-radius: 5px;
-  font-size: 20px;
+  .drink-page-text-container {
+    min-height: 400px;
+    padding: 20px 30px 20px 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: $card-background;
+    z-index: 0;
+    margin: 20px 10px 10px 200px;
+    border-radius: 5px;
+    font-size: 20px;
+
+    ul {
+      text-decoration: none;
+      list-style-type: none;
+    }
+  }
 }

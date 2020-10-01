@@ -58,9 +58,9 @@ const Home = (props) => {
   }
   return (
     <div>
-      <div className="home-container">
-      <Dropdown>
-          <DropdownButton variant="outline-light" title='Choose Alcohol'>
+      <div className='secondary-navbar'>
+        <Dropdown>
+          <DropdownButton variant='outline-light' title='Choose Alcohol'>
             <Dropdown.Item
               as={Link}
               to={{
@@ -121,12 +121,17 @@ const Home = (props) => {
             onSubmit={searchByIng}
             placeholder='Search by ingredients...'
           />
-            <Button type='submit' className='search-button' variant="outline-light" onClick={searchByIng}>
-              Search
-            </Button>
+          <Button
+            type='submit'
+            className='search-button'
+            variant='outline-light'
+            onClick={searchByIng}
+          >
+            Search
+          </Button>
         </Form>
         <Button
-          variant="outline-light"
+          variant='outline-light'
           className='random-drinks-button'
           type='submit'
           onClick={tenDrinks}
@@ -134,8 +139,14 @@ const Home = (props) => {
           Feeling Jiggy?
         </Button>
       </div>
-      
-        {randomDrinks.length > 1 ? <div className='random-drinks-message'>Check out these 10 random drinks!</div> : ''}
+
+      {randomDrinks.length > 1 ? (
+        <div className='random-drinks-message'>
+          Check out these 10 random drinks!
+        </div>
+      ) : (
+        ''
+      )}
       <DrinkList drinkData={randomDrinks} />
     </div>
   );
