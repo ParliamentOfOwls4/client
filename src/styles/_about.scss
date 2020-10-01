@@ -1,0 +1,63 @@
+/* ============== About.js page ================= */
+
+.about-container {
+  padding-top: 50px;
+  display: block;
+
+  .about-app {
+    padding-bottom: 50px;
+    font-size: 25px;
+  }
+
+  .developer-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+
+    .developer-content {
+      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 80%;
+
+      .picture-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: -40px;
+
+        .profile-picture {
+          background-color: white;
+          height: 200px;
+          width: 200px;
+          z-index: 4;
+          position: relative;
+          border-radius: 3px;
+          box-shadow: 5px 7px 13px $box-shadow-color;
+        }
+      }
+
+      .bio {
+        background-color: $card-background;
+        border-radius: 3px;
+        font-size: 22px;
+        padding: 60px 15px 10px 15px;
+
+        .about-icons {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          padding: 0 50px;
+          font-size: 30px;
+
+          a {
+            color: inherit;
+            display: flex;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

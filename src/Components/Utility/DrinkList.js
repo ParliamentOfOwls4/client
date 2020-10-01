@@ -7,7 +7,8 @@ const DrinkList = (props) => {
   } else if (props.drinkData === 'None Found') {
     return (
       <div className='none-found-message'>
-        Sorry! We couldn't find any drinks with those ingredients, click back to the home page to try again!
+        Sorry! We couldn't find any drinks with those ingredients, click back to
+        the home page to try again!
       </div>
     );
   } else {
@@ -24,6 +25,7 @@ const DrinkList = (props) => {
             />
             <li className='drink-list-text' key={drink.idDrink}>
               <Link
+                className='drink-list-link'
                 to={{
                   pathname: `/drink/${drink.idDrink}`,
                   state: { id: `${drink.idDrink}` },
