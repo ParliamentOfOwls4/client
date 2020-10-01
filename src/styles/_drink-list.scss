@@ -29,7 +29,7 @@
     z-index: 0;
     border-radius: 5px;
     font-size: 20px;
-
+    
     .drink-list-image {
       background-color: white;
       height: 100px;
@@ -38,7 +38,7 @@
       margin-left: -40px;
       position: relative;
       border-radius: 3px;
-      box-shadow: 5px 7px 13px $box-shadow-color;
+      box-shadow: 5px 5px 15px 1px $box-shadow-color;
     }
 
     .drink-list-text {
@@ -56,5 +56,8 @@
         color: inherit;
       }
     }
+  }
+  .drink-list-item-container:hover {
+    background-color: #e6e6e6;
   }
 }

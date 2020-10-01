@@ -16,6 +16,15 @@
 
     .read-more-button {
       cursor: pointer;
+      color: #0047b3;
+      border: none;
+      background-color: white;
+      outline: none;
+      border-radius: 5px;
+      :hover {
+        background-color: $card-background;
+        color: #002966;
+      }
     }
   }
 }
