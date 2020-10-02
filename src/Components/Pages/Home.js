@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { DropdownButton } from 'react-bootstrap';
 import DrinkList from '../Utility/DrinkList';
+import { GoSearch } from 'react-icons/go';
 import { Redirect } from 'react-router-dom';
-import { get10Drinks } from '../Config'
+import { get10Drinks } from '../Config';
 
 const Home = () => {
   const [randomDrinks, setRandomDrinks] = useState([]);
@@ -18,7 +18,7 @@ const Home = () => {
     get10Drinks()
       .then((res) => setRandomDrinks(res.data.drinks))
       .catch(console.error);
-  }
+  };
 
   const handleChange = (event) => {
     setSearchIng(event.target.value);
@@ -48,7 +48,7 @@ const Home = () => {
     <div>
       <div className='secondary-navbar'>
         <Dropdown>
-          <DropdownButton variant='outline-light' title='Choose Alcohol'>
+          <DropdownButton variant='dark' title='Choose Alcohol'>
             <Dropdown.Item
               as={Link}
               to={{
@@ -112,19 +112,19 @@ const Home = () => {
           <Button
             type='submit'
             className='search-button'
-            variant='outline-light'
+            variant='secondary'
             onClick={searchByIng}
           >
-            Search
+            <GoSearch />
           </Button>
         </Form>
         <Button
-          variant='outline-light'
+          // variant='info'
           className='random-drinks-button'
           type='submit'
           onClick={onClick}
         >
-          Feeling Jiggy?
+          <span className='feeling-span'>Feeling</span> Jiggy?
         </Button>
       </div>
 
@@ -133,8 +133,8 @@ const Home = () => {
           Check out these 10 random drinks!
         </div>
       ) : (
-          ''
-        )}
+        ''
+      )}
       <DrinkList drinkData={randomDrinks} />
     </div>
   );

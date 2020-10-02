@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import Loading from '../Utility/Loading';
-import axios from 'axios';
 import DrinkList from '../Utility/DrinkList';
 import { AiOutlineRead } from 'react-icons/ai';
-import { getAlcohol, getAlcoholDrinks } from '../Config'
+import { getAlcohol, getAlcoholDrinks } from '../Config';
 
 const Alcohol = (props) => {
   const [alcohol, setAlcohol] = useState(null);
@@ -17,11 +16,11 @@ const Alcohol = (props) => {
       (read less) <AiOutlineRead />{' '}
     </p>
   ) : (
-      <p>
-        {' '}
+    <p>
+      {' '}
       ...read more <AiOutlineRead />
-      </p>
-    );
+    </p>
+  );
 
   useEffect(() => {
     getAlcohol(selection)
@@ -29,7 +28,6 @@ const Alcohol = (props) => {
       .catch(console.error);
     // eslint-disable-next-line
   }, []);
-
 
   useEffect(() => {
     getAlcoholDrinks(selection)
