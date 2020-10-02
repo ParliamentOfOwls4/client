@@ -37,12 +37,17 @@
 .random-drinks-button {
   font-family: $satisfy;
   color: black !important;
-  border: none !important;
+  border: .5px black solid !important;
   background-color: rgb(255, 230, 0) !important;
   margin-top: 7px;
-  padding-top: 6px !important;
-  margin-bottom: 6px !important;
+  padding-top: 5px !important;
+  padding-bottom: 3px !important;
+  margin-bottom: 8px !important;
   font-size: 20px !important;
+}
+
+.random-drinks-button:hover {
+  background-color: rgb(245,220,4) !important;
 }
 
 .feeling-span {
