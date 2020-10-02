@@ -15,26 +15,26 @@ const DrinkList = (props) => {
     return (
       <div className='drink-list-container'>
         {props.drinkData.map((drink) => (
-          <ul className='drink-list-item-container' key={drink.idDrink}>
-            <img
-              className='drink-list-image'
-              src={`${drink.strDrinkThumb}`}
-              height='80'
-              width='80'
-              alt='pic'
-            />
-            <li className='drink-list-text' key={drink.idDrink}>
-              <Link
-                className='drink-list-link'
-                to={{
-                  pathname: `/drink/${drink.idDrink}`,
-                  state: { id: `${drink.idDrink}` },
-                }}
-              >
+          <Link
+            className='drink-list-link'
+            to={{
+              pathname: `/drink/${drink.idDrink}`,
+              state: { id: `${drink.idDrink}` },
+            }}
+          >
+            <ul className='drink-list-item-container' key={drink.idDrink}>
+              <img
+                className='drink-list-image'
+                src={`${drink.strDrinkThumb}`}
+                height='80'
+                width='80'
+                alt='pic'
+              />
+              <li className='drink-list-text' key={drink.idDrink}>
                 {drink.strDrink}
-              </Link>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </Link>
         ))}
       </div>
     );

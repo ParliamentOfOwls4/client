@@ -9,27 +9,31 @@
 .drink-list-container {
   display: flex;
   flex-direction: column;
-  width: 70%;
-  margin: 10px auto;
+  width: 80%;
+  margin: 20px auto;
   /* background-color: #FDF7E3; */
   align-items: center;
+  padding: 20px 20px 20px 20px;
   position: relative;
+  min-width: 350px;
   max-width: 500px;
+  min-height: 150px;
 
   .drink-list-item-container {
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 70%;
     margin: 20px auto;
     align-items: center;
     position: relative;
+    min-width: 400px;
     min-height: 150px;
     padding: 20px 20px 20px 20px;
     background-color: $card-background;
     z-index: 0;
     border-radius: 5px;
-    font-size: 20px;
-    
+    // font-size: 25px;
+
     .drink-list-image {
       background-color: white;
       height: 100px;
@@ -38,12 +42,13 @@
       margin-left: -40px;
       position: relative;
       border-radius: 3px;
+      border: 0.5px solid black;
       box-shadow: 5px 5px 15px 1px $box-shadow-color;
     }
 
     .drink-list-text {
       font-family: $libre-baskerville;
-      font-size: 25px;
+      font-size: 23px;
       display: inline;
       margin: auto;
       color: black;
