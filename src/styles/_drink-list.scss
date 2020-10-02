@@ -62,7 +62,12 @@
       }
     }
   }
-  .drink-list-item-container:hover {
-    background-color: #e6e6e6;
-  }
+}
+
+.drink-list-item-container:hover {
+  background-color: #e6e6e6;
+}
+
+.drink-list-link:hover {
+  text-decoration: none;
 }
