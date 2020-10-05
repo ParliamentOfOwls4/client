@@ -85,3 +85,32 @@
   font-style: italic !important;
   font-size: 18px;
 }
+
+@media (max-width: 850px) {
+  .secondary-navbar {
+    width: 95%;
+  }
+}
+
+@media (max-width: 600px) {
+  .secondary-navbar {
+    flex-wrap: wrap;
+    // flex-direction: column;
+  }
+  
+  .search-bar-container {
+    order: -1;
+    width: 95% !important;
+    flex: grow;
+  }
+
+  .dropdown-toggle {
+    order: 2;
+    display: block;
+  }
+
+  .random-drinks-button {
+    order: 3;
+    display: block;
+  }
+}
