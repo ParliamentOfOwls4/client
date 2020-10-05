@@ -48,7 +48,7 @@ const Home = () => {
     <div>
       <div className='secondary-navbar'>
         <Dropdown>
-          <DropdownButton variant='dark' title='Choose Alcohol'>
+          <DropdownButton title='Choose Alcohol'>
             <Dropdown.Item
               as={Link}
               to={{
@@ -109,14 +109,9 @@ const Home = () => {
             onSubmit={searchByIng}
             placeholder='Search by ingredients...'
           />
-          <Button
-            type='submit'
-            className='search-button'
-            variant='secondary'
-            onClick={searchByIng}
-          >
+          <button type='submit' className='btn-black' onClick={searchByIng}>
             <GoSearch />
-          </Button>
+          </button>
         </Form>
         <Button
           // variant='info'
