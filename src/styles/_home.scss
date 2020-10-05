@@ -61,7 +61,7 @@
 .random-drinks-message {
   text-align: center;
   font-size: 25px;
-  padding-top: 25px;
+  padding: 25px 80px 0;
 }
 
 .random-drinks-button {
@@ -97,7 +97,7 @@
     flex-wrap: wrap;
     // flex-direction: column;
   }
-  
+
   .search-bar-container {
     order: -1;
     width: 95% !important;
