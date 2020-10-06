@@ -10,13 +10,15 @@
         align-items: center;
         position: absolute;
         height: 100%;
-        width: 30%;
+        width: 25%;
         right: 0;
+        opacity: 0.95;
         // transform: translateX(0%);
         // transition: transform 3s ease;
     }
     .menu-links {
-        color: black;
-        z-index: 2;
+        margin: 10px;
+        font-weight: 800;
+        z-index: 3;
     }
 }
