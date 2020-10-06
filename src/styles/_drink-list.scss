@@ -1,0 +1,96 @@
+/* ========== DrinkList Component =========== */
+
+.none-found-message {
+  font-size: 25px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.drink-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 20px auto;
+  /* background-color: #FDF7E3; */
+  align-items: center;
+  padding: 20px 20px 20px 20px;
+  position: relative;
+  min-width: 350px;
+  max-width: 500px;
+  min-height: 150px;
+
+  .drink-list-item-container {
+    display: flex;
+    flex-direction: row;
+    // width: 70%;
+    margin: 20px auto 20px 10px;
+    align-items: center;
+    position: relative;
+    width: 400px;
+    height: 150px;
+    padding: 20px 20px 20px 20px;
+    background-color: $card-background;
+    z-index: 0;
+    border-radius: 5px;
+    // font-size: 25px;
+
+    .drink-list-image {
+      background-color: white;
+      height: 100px;
+      width: 100px;
+      z-index: 4;
+      margin-left: -40px;
+      position: relative;
+      border-radius: 3px;
+      border: 0.5px solid black;
+      box-shadow: 5px 5px 15px 1px $box-shadow-color;
+    }
+
+    .drink-list-text {
+      font-family: $libre-baskerville;
+      font-size: 23px;
+      display: inline;
+      margin: auto;
+      color: black;
+      align-items: center;
+      text-align: center;
+      position: relative;
+
+      .drink-list-link {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+}
+
+.drink-list-item-container:hover {
+  background-color: #e6e6e6;
+}
+
+.drink-list-link:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 500px) {
+  .drink-list-container {
+    // min-width: 250px !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+  }
+  .drink-list-item-container {
+    min-width: 300px !important;
+    max-width: 400px !important;
+    // width: 80% !important;
+    // min-width: 100% !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .drink-list-item-container {
+    width: 250px !important;
+    // max-width: 400px !important;
+    // width: 80% !important;
+    // min-width: 100% !important;
+  }
+}

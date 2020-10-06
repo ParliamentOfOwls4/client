@@ -1,0 +1,30 @@
+/* ============== Alcohol.js page ================= */
+
+.alcohol-page-container {
+  width: 100%;
+  height: 100vh;
+
+  .alcohol-page-title {
+    text-align: center;
+    font-size: 45px;
+    padding-top: 15px;
+  }
+
+  .alcohol-page-description {
+    font-size: 18px;
+    margin-top: 40px;
+
+    .read-more-button {
+      cursor: pointer;
+      color: #0047b3;
+      border: none;
+      background-color: white;
+      outline: none;
+      border-radius: 5px;
+      :hover {
+        background-color: $card-background;
+        color: #002966;
+      }
+    }
+  }
+}
