@@ -36,6 +36,10 @@
 
 @media (max-width: 500px) {
   .navLinks {
-    font-size: 30px !important;
+    display:none;
   }
+  // .nav {
+  //   display: flex;
+  //   justify-content: center;
+  // }
 }

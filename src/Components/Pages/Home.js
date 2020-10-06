@@ -9,7 +9,7 @@ import { GoSearch } from 'react-icons/go';
 import { Redirect } from 'react-router-dom';
 import { get10Drinks } from '../Config';
 
-const Home = () => {
+const Home = ({ open, setOpen }) => {
   const [randomDrinks, setRandomDrinks] = useState([]);
   const [searchIng, setSearchIng] = useState('');
   const [redirect, setRedirect] = useState(false);
