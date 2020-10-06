@@ -37,3 +37,25 @@
     text-align: center;
   }
 }
+
+@media (max-width: 560px) {
+  .hero-image {
+    width: 100%;
+    height: 55vh;
+  }
+  .hero-logo {
+    width: 200px;
+    // height: 100%;
+    padding-top: 60px;
+
+  }
+
+  .hero-slogan {
+    display: none;
+  }
+}
+// @media (max-width: 570px) {
+//   .hero-slogan {
+//     display: none;
+//   }
+// }

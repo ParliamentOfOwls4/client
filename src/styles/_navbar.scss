@@ -33,3 +33,13 @@
     text-decoration: none;
   }
 }
+
+@media (max-width: 500px) {
+  .navLinks {
+    display:none;
+  }
+  // .nav {
+  //   display: flex;
+  //   justify-content: center;
+  // }
+}
