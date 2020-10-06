@@ -23,7 +23,7 @@ const About = () => {
             <div className='developer-container'>
                 <div className='developer-content'>
                     <div className='picture-container'>
-                        <img className='profile-picture' src={Thanh} alt='Thanh picture' />
+                        <img className='profile-picture' src={Thanh} alt='Thanh' />
                     </div>
                     <div className='bio'>
                         <h2>Thanh Nguyen</h2>
@@ -36,6 +36,7 @@ const About = () => {
                             <a
                                 href='https://github.com/TN-space'
                                 target='_blank'
+                                rel="noopener noreferrer"
                                 title='GitHub'
                             >
                                 <FaGithub />
@@ -43,6 +44,7 @@ const About = () => {
                             <a
                                 href='https://www.linkedin.com/in/tnguyens'
                                 target='_blank'
+                                rel="noopener noreferrer"
                                 title='LinkedIn'
                             >
                                 <FaLinkedin />
@@ -50,6 +52,7 @@ const About = () => {
                             <a
                                 href='https://tn-space.github.io/'
                                 target='_blank'
+                                rel="noopener noreferrer"
                                 title='Porfolio'
                             >
                                 <BsPersonLinesFill />
@@ -59,7 +62,7 @@ const About = () => {
                 </div>
                 <div className='developer-content'>
                     <div className='picture-container'>
-                        <img className='profile-picture' src={Dan} alt='Dan picture' />
+                        <img className='profile-picture' src={Dan} alt='Dan' />
                     </div>
                     <div className='bio'>
                         <h2>Daniel Powers</h2>
@@ -72,6 +75,7 @@ const About = () => {
                             <a
                                 href='https://github.com/Danpowers24'
                                 target='_blank'
+                                rel="noopener noreferrer"
                                 title='GitHub'
                             >
                                 <FaGithub />
@@ -79,6 +83,7 @@ const About = () => {
                             <a
                                 href='https://www.linkedin.com/in/danpowers610'
                                 target='_blank'
+                                rel="noopener noreferrer"
                                 title='LinkedIn'
                             >
                                 <FaLinkedin />
@@ -86,6 +91,7 @@ const About = () => {
                             <a
                                 href='https://danpowers24.github.io'
                                 target='_blank'
+                                rel="noopener noreferrer"
                                 title='Porfolio'
                             >
                                 <BsPersonLinesFill />
@@ -95,7 +101,7 @@ const About = () => {
                 </div>
                 <div className='developer-content'>
                     <div className='picture-container'>
-                        <img className='profile-picture' src={Ross} alt='Ross picture' />
+                        <img className='profile-picture' src={Ross} alt='Ross' />
                     </div>
                     <div className='bio'>
                         <h2>Ross Northrup</h2>
@@ -110,6 +116,7 @@ const About = () => {
                             <a
                                 href='https://github.com/northross'
                                 target='_blank'
+                                rel="noopener noreferrer"
                                 title='GitHub'
                             >
                                 <FaGithub />
@@ -117,6 +124,7 @@ const About = () => {
                             <a
                                 href='https://www.linkedin.com/in/rossnorthrup'
                                 target='_blank'
+                                rel="noopener noreferrer"
                                 title='LinkedIn'
                             >
                                 <FaLinkedin />
@@ -124,6 +132,7 @@ const About = () => {
                             <a
                                 href='https://northross.github.io'
                                 target='_blank'
+                                rel="noopener noreferrer"
                                 title='Porfolio'
                             >
                                 <BsPersonLinesFill />

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { FaGlassMartiniAlt } from 'react-icons/fa';
 import { ImListNumbered } from 'react-icons/im';
 import { GrWorkshop } from 'react-icons/gr';
