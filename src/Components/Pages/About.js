@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import { BsPersonLinesFill } from 'react-icons/bs';
@@ -7,7 +7,11 @@ import Dan from '../../assets/Dan2.png';
 import Ross from '../../assets/Ross2.png';
 import Thanh from '../../assets/Thanh2.png';
 
-const About = () => {
+const About = ({ open, setOpen }) => {
+    // useEffect(() => {
+    //     setOpen(false)
+    // })
+
     return (
         <div className='about-container'>
             <h2>About this app:</h2>

@@ -16,6 +16,7 @@ const DrinkList = (props) => {
       <div className='drink-list-container'>
         {props.drinkData.map((drink) => (
           <Link
+            key={drink.idDrink}
             className='drink-list-link'
             to={{
               pathname: `/drink/${drink.idDrink}`,
