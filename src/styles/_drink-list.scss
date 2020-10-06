@@ -94,3 +94,9 @@
     // min-width: 100% !important;
   }
 }
+
+@media (max-width: 350px) {
+  .drink-list-item-container {
+    min-width: 200px !important;
+  }
+}

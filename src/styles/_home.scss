@@ -95,6 +95,7 @@
 @media (max-width: 600px) {
   .secondary-navbar {
     flex-wrap: wrap;
+    justify-content: space-around;
     // flex-direction: column;
   }
 
@@ -112,6 +113,14 @@
   .random-drinks-button {
     order: 3;
     display: block;
+  }
+}
+
+@media (max-width: 350px) {
+  .random-drinks-message {
+    text-align: center;
+    font-size: 25px;
+    padding: 25px 40px 0;
   }
 }
 
