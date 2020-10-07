@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Loading from '../Utility/Loading';
 import DrinkList from '../Utility/DrinkList';
-import { getSearchResult } from '../Config'
+import { getSearchResult } from '../Config';
 
 const SearchByIngResult = (props) => {
   const [searchResult, setSearchResult] = useState(null);
@@ -30,9 +30,12 @@ const SearchByIngResult = (props) => {
   } else {
     return (
       <div className='search-page-container'>
+        <p className='search-result-title'>
+          Search results for "{searchInput}"
+        </p>
         <DrinkList drinkData={searchResult} />
       </div>
-    )
+    );
   }
 };
 
