@@ -47,7 +47,7 @@ const Drink = (props) => {
           alt='pic'
         />
         <div className='drink-page-text-container'>
-          <h1>{drink[0].strDrink}</h1>
+          <h1 className='drink-page-title'>{drink[0].strDrink}</h1>
           <p>
             <FaGlassMartiniAlt /> {'   '}
             <strong>Best Served In:</strong> {drink[0].strGlass}
@@ -58,7 +58,7 @@ const Drink = (props) => {
           </p>
           <ul>
             <li>
-              <ul>
+              <ul className='drink-page-ingredients'>
                 {ingredients.map((ing) => (
                   <li key={ingredients.indexOf(ing)}>{ing}</li>
                 ))}

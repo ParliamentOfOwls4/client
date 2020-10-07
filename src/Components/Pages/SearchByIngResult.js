@@ -28,7 +28,11 @@ const SearchByIngResult = (props) => {
   if (!searchResult) {
     return <Loading />;
   } else {
-    return <DrinkList drinkData={searchResult} />;
+    return (
+      <div className='search-page-container'>
+        <DrinkList drinkData={searchResult} />
+      </div>
+    )
   }
 };
 
