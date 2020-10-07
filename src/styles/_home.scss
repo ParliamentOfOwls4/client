@@ -61,7 +61,8 @@
 .random-drinks-message {
   text-align: center;
   font-size: 25px;
-  padding: 25px 80px 0;
+  padding: 25px 80px 0px;
+  margin-bottom: -35px;
 }
 
 .random-drinks-button {
@@ -120,7 +121,7 @@
   .random-drinks-message {
     text-align: center;
     font-size: 25px;
-    padding: 25px 40px 0;
+    padding: 15px 40px 0px;
   }
 }
 

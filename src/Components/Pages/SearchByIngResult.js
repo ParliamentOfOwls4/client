@@ -28,7 +28,12 @@ const SearchByIngResult = (props) => {
   if (!searchResult) {
     return <Loading />;
   } else {
-    return <DrinkList drinkData={searchResult} />;
+    return (
+      <div className='search-page-container'>
+        {/* <div className='search-page-message'>Showing search results for "{searchInput}"</div> */}
+        <DrinkList drinkData={searchResult} />
+      </div>
+    )
   }
 };
 
