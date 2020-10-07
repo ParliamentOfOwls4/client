@@ -30,7 +30,6 @@ const SearchByIngResult = (props) => {
   } else {
     return (
       <div className='search-page-container'>
-        {/* <div className='search-page-message'>Showing search results for "{searchInput}"</div> */}
         <DrinkList drinkData={searchResult} />
       </div>
     )
