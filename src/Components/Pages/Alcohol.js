@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Col, Container } from 'react-bootstrap';
 import Loading from '../Utility/Loading';
 import DrinkList from '../Utility/DrinkList';
 import { AiOutlineRead } from 'react-icons/ai';
@@ -42,10 +42,9 @@ const Alcohol = (props) => {
     const shortDescription = alcohol.strDescription.substr(0, 500);
     const { strDescription } = alcohol;
     return (
-      <Container className='alcohol-page-container'>
+      <div className='alcohol-page-container'>
         <div className='alcohol-page-title'>{selection}</div>
-        <Row>
-          <Col xs={4} className='alcohol-page-description'>
+          <div className='alcohol-page-description'>
             {' '}
             {readMore ? strDescription : shortDescription}
             <button
@@ -56,13 +55,12 @@ const Alcohol = (props) => {
             >
               {readMoreCheck}{' '}
             </button>
-          </Col>
+          </div>
 
-          <Col xs={8} className='alcohol-page-drink-list'>
+          <div className='alcohol-page-drink-list'>
             <DrinkList drinkData={alcoholDrinks} />
-          </Col>
-        </Row>
-      </Container>
+          </div>
+      </div>
     );
   }
 };

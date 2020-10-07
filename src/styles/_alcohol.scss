@@ -1,18 +1,24 @@
 /* ============== Alcohol.js page ================= */
 
 .alcohol-page-container {
-  width: 100%;
+  width: 85%;
   height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 0 auto;
 
   .alcohol-page-title {
     text-align: center;
     font-size: 45px;
     padding-top: 15px;
+    width: 100%;
   }
 
   .alcohol-page-description {
     font-size: 18px;
     margin-top: 40px;
+    width: 40%;
 
     .read-more-button {
       cursor: pointer;
@@ -27,4 +33,32 @@
       }
     }
   }
+
+  .alcohol-page-drink-list {
+    width: 60%;
+  }
+}
+
+@media (max-width: 800px) {
+  .alcohol-page-container {
+    .alcohol-page-description {
+      margin-right: 10px;
+      width: 30%;
+      font-size: 16px;
+    } 
+  }
+}
+
+@media (max-width: 600px) {
+  .alcohol-page-container {
+    flex-direction: row;
+
+    .alcohol-page-description {
+      width: 100%;
+      margin: 0px auto -30px auto;
+    }
+    .alcohol-page-drink-list {
+      width: 100%;
+    }
+  } 
 }
