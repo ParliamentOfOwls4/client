@@ -34,28 +34,34 @@ const NavBar = () => {
   
   return (
     <div ref={node}>
-    <div className='nav'>
-      <a href='/'>
-        <img className='logo' src={logo} alt='logo' height='85' width='110' />
-      </a>
-      <Link
-        className='navLinks'
-        style={{ color: '#fff', textDecoration: 'none' }}
-        to='/'
-      >
-        HOME
-      </Link>
-      <Link
-        className='navLinks'
-        style={{ color: '#fff', textDecoration: 'none' }}
-        to='/about'
-      >
-        ABOUT
-      </Link>
-      <Hamburger open={open} setOpen={setOpen} />
-    </div>
-     {open ? <Menu open={open} setOpen={setOpen} onClick={onClick}
-/> : ''}
+      <div className='nav'>
+        <a href='/'>
+          <img className='logo' src={logo} alt='logo' height='85' width='110' />
+        </a>
+        <Link
+          className='navLinks'
+          style={{ color: '#fff', textDecoration: 'none' }}
+          to='/'
+        >
+          HOME
+        </Link>
+        <Link
+          className='navLinks'
+          style={{ color: '#fff', textDecoration: 'none' }}
+          to='/about'
+        >
+          ABOUT
+        </Link>
+        <Hamburger open={open} setOpen={setOpen} />
+      </div>
+      {open 
+        ? <Menu 
+          open={open} 
+          setOpen={setOpen} 
+          onClick={onClick}
+          /> 
+        : ''
+      }
      </div>
   );
 };
