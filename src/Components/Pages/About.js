@@ -8,13 +8,9 @@ import Ross from '../../assets/Ross2.png';
 import Thanh from '../../assets/Thanh2.png';
 
 const About = ({ open, setOpen }) => {
-    // useEffect(() => {
-    //     setOpen(false)
-    // })
-
     return (
         <div className='about-container'>
-            <h2>About this app:</h2>
+            <div className='about-this-app-title'>About</div>
             <div className='about-app'>
                 This React application is a pandemic-inspired collaboration between
                 three friends. We connected to RapidAPI's "Cocktail DB" database and
@@ -23,19 +19,19 @@ const About = ({ open, setOpen }) => {
                 you're 'Feeling Jiggy' we'll suggest 10 random drinks to make.
       </div>
 
-            <h2>About us:</h2>
+            <div className='about-whos-jiggy'>Who's <span className='about-span-jiggy'>Jiggy?</span></div>
             <div className='developer-container'>
                 <div className='developer-content'>
                     <div className='picture-container'>
                         <img className='profile-picture' src={Thanh} alt='Thanh' />
                     </div>
                     <div className='bio'>
-                        <h2>Thanh Nguyen</h2>
+                        <h2 className='about-name'>Thanh Nguyen</h2>
                         <p>
                             Hello, My name is Thanh. My friends and I created this application
                             to practice our skills as developers. We are very enthusiastic to
                             learn and explore the technological world.
-            </p>
+                        </p>
                         <div className='about-icons'>
                             <a
                                 href='https://github.com/TN-space'
@@ -64,12 +60,12 @@ const About = ({ open, setOpen }) => {
                         </div>
                     </div>
                 </div>
-                <div className='developer-content'>
+                <div className='developer-content dan'>
                     <div className='picture-container'>
                         <img className='profile-picture' src={Dan} alt='Dan' />
                     </div>
                     <div className='bio'>
-                        <h2>Daniel Powers</h2>
+                        <h2 className='about-name'>Daniel Powers</h2>
                         <p>
                             A people person with a passion for tech, this lifelong New
                             Englander is new to the Bay Area and ready to contribute to your
@@ -108,7 +104,7 @@ const About = ({ open, setOpen }) => {
                         <img className='profile-picture' src={Ross} alt='Ross' />
                     </div>
                     <div className='bio'>
-                        <h2>Ross Northrup</h2>
+                        <h2 className='about-name'>Ross Northrup</h2>
                         <p>
                             A super-cool Software Engineer excited to learn new languages and
                             build projects with like-minded programmers.

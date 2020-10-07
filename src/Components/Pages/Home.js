@@ -114,7 +114,6 @@ const Home = ({ open, setOpen }) => {
           </button>
         </Form>
         <Button
-          // variant='info'
           className='random-drinks-button'
           type='submit'
           onClick={onClick}

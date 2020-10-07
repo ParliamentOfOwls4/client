@@ -4,9 +4,28 @@
   padding-top: 50px;
   display: block;
 
+  .about-this-app-title {
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    margin-right: 0px;
+  }
+
   .about-app {
     padding-bottom: 50px;
     font-size: 25px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .about-whos-jiggy {
+    text-align: center;
+    font-size: 60px;
+  }
+
+  .about-span-jiggy {
+    font-family: $jiggy;
+    font-weight: 500;
   }
 
   .developer-container {
@@ -44,6 +63,10 @@
         font-size: 22px;
         padding: 60px 15px 10px 15px;
 
+        .about-name {
+          text-align: center;
+        }
+
         .about-icons {
           display: flex;
           justify-content: space-evenly;
@@ -62,3 +85,53 @@
   }
 }
 
+@media (max-width: 800px) {
+  .about-container {
+    .developer-container {
+      .developer-content {
+        .picture-container {
+          .profile-picture {
+            height: 150px;
+            width: 150px;
+          }
+        }
+        .bio {
+          .about-icons {
+            padding: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .about-container {
+    .about-app {
+      font-size: 20px;
+    }
+    .developer-container {
+      flex-direction: column;
+      // paddingtop
+      .developer-content {
+        width: 100%;
+        padding: 20px 20px;
+
+        .picture-container {
+          .profile-picture {
+            height: 200px;
+            width: 200px;
+        }
+      }
+        .bio {
+          .about-icons {
+            padding: 0px 50px;
+          }
+        }
+      }
+      .dan {
+        order: -1;
+      }
+    }
+  }
+}

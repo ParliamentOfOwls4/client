@@ -1,0 +1,10 @@
+
+.search-page-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .search-page-message {
+        text-align: center;
+    }
+}

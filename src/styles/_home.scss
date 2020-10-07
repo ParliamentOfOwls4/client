@@ -61,11 +61,12 @@
 .random-drinks-message {
   text-align: center;
   font-size: 25px;
-  padding: 25px 80px 0;
+  padding: 25px 80px 0px;
+  margin-bottom: -35px;
 }
 
 .random-drinks-button {
-  font-family: $satisfy;
+  font-family: $jiggy;
   color: black !important;
   border: 0.5px black solid !important;
   background-color: rgb(255, 230, 0) !important;
@@ -95,6 +96,7 @@
 @media (max-width: 600px) {
   .secondary-navbar {
     flex-wrap: wrap;
+    justify-content: space-around;
     // flex-direction: column;
   }
 
@@ -112,6 +114,14 @@
   .random-drinks-button {
     order: 3;
     display: block;
+  }
+}
+
+@media (max-width: 350px) {
+  .random-drinks-message {
+    text-align: center;
+    font-size: 25px;
+    padding: 15px 40px 0px;
   }
 }
 
