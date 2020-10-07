@@ -1,10 +1,13 @@
-
 .search-page-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
-    .search-page-message {
-        text-align: center;
-    }
+.search-result-title {
+  text-align: center;
+  font-size: 25px !important;
+  //   margin: 10px auto;
+  padding: 25px 20px 0;
+  margin-bottom: -15px;
 }
