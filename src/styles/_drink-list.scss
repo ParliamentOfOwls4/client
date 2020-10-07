@@ -74,24 +74,18 @@
 
 @media (max-width: 500px) {
   .drink-list-container {
-    // min-width: 250px !important;
     max-width: 100% !important;
     min-width: 100% !important;
   }
   .drink-list-item-container {
     min-width: 300px !important;
     max-width: 400px !important;
-    // width: 80% !important;
-    // min-width: 100% !important;
   }
 }
 
 @media (max-width: 450px) {
   .drink-list-item-container {
     width: 250px !important;
-    // max-width: 400px !important;
-    // width: 80% !important;
-    // min-width: 100% !important;
   }
 }
 
