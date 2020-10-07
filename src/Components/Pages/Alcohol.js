@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Col, Container } from 'react-bootstrap';
 import Loading from '../Utility/Loading';
 import DrinkList from '../Utility/DrinkList';
 import { AiOutlineRead } from 'react-icons/ai';
