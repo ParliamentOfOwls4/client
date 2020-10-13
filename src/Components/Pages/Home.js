@@ -9,7 +9,7 @@ import { GoSearch } from 'react-icons/go';
 import { Redirect } from 'react-router-dom';
 import { get10Drinks } from '../Config';
 
-const Home = ({ open, setOpen }) => {
+const Home = () => {
   const [randomDrinks, setRandomDrinks] = useState([]);
   const [searchIng, setSearchIng] = useState('');
   const [redirect, setRedirect] = useState(false);
@@ -52,7 +52,7 @@ const Home = ({ open, setOpen }) => {
             <Dropdown.Item
               as={Link}
               to={{
-                pathname: '/baseliquor/alcohol',
+                pathname: '/baseliquor/vodka',
                 state: { selection: 'Vodka' },
               }}
               eventKey='vodka'
@@ -62,7 +62,7 @@ const Home = ({ open, setOpen }) => {
             <Dropdown.Item
               as={Link}
               to={{
-                pathname: '/baseliquor/alcohol',
+                pathname: '/baseliquor/scotch',
                 state: { selection: 'Scotch' },
               }}
               eventKey='scotch'
@@ -72,7 +72,7 @@ const Home = ({ open, setOpen }) => {
             <Dropdown.Item
               as={Link}
               to={{
-                pathname: '/baseliquor/alcohol',
+                pathname: '/baseliquor/rum',
                 state: { selection: 'Rum' },
               }}
               eventKey='rum'
@@ -82,7 +82,7 @@ const Home = ({ open, setOpen }) => {
             <Dropdown.Item
               as={Link}
               to={{
-                pathname: '/baseliquor/alcohol',
+                pathname: '/baseliquor/gin',
                 state: { selection: 'Gin' },
               }}
               eventKey='gin'
@@ -92,7 +92,7 @@ const Home = ({ open, setOpen }) => {
             <Dropdown.Item
               as={Link}
               to={{
-                pathname: '/baseliquor/alcohol',
+                pathname: '/baseliquor/tequila',
                 state: { selection: 'Tequila' },
               }}
               eventKey='tequila'
@@ -127,8 +127,8 @@ const Home = ({ open, setOpen }) => {
           Check out these 10 random drinks!
         </div>
       ) : (
-        ''
-      )}
+          ''
+        )}
       <DrinkList drinkData={randomDrinks} />
     </div>
   );
