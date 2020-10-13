@@ -4,9 +4,10 @@ import DrinkList from '../Utility/DrinkList';
 import { getSearchResult } from '../Config';
 
 const SearchByIngResult = (props) => {
-  const [searchResult, setSearchResult] = useState(null);
+  const [searchResult, setSearchResult] = useState(null)
+  let searchInput
 
-  let searchInput = props.location.state.searchTerm;
+  props.location.state ? searchInput = props.location.state.searchTerm : searchInput = window.location.pathname.substr(8)
 
   for (let i = 0; i < searchInput.length; i++) {
     if (searchInput[i] === ' ') {

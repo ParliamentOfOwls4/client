@@ -40,14 +40,14 @@ const Home = () => {
   if (redirect) {
     return (
       <Redirect
-        to={{ pathname: '/search/result', state: { searchTerm: searchIng } }}
+        to={{ pathname: `/search/${searchIng}`, state: { searchTerm: searchIng } }}
       />
     );
   }
   return (
     <div>
       <div className='secondary-navbar'>
-        <Dropdown>
+        <Dropdown title="pick your poison">
           <DropdownButton title='Choose Alcohol'>
             <Dropdown.Item
               as={Link}
@@ -103,17 +103,19 @@ const Home = () => {
         </Dropdown>
         <Form className='search-bar-container'>
           <Form.Control
+            title='search by ingredients'
             className='search-bar'
             value={searchIng}
             onChange={handleChange}
             onSubmit={searchByIng}
-            placeholder='Search by ingredients...'
+            placeholder='ex: gin,7-up,lemon_juice...'
           />
           <button type='submit' className='btn-black' onClick={searchByIng}>
             <GoSearch />
           </button>
         </Form>
         <Button
+          title="Hit it!"
           className='random-drinks-button'
           type='submit'
           onClick={onClick}
