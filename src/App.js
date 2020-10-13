@@ -24,7 +24,7 @@ function App() {
           <Route exact path='/baseliquor/:alcohol' component={Alcohol} />
           <Route
             exact
-            path='/search/result'
+            path='/search/:result'
             render={(props) => <SearchByIngResult {...props} />}
           />
 
