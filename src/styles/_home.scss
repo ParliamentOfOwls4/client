@@ -51,7 +51,6 @@
   height: calc(1.5em + 0.75rem + 2px);
   width: 180px;
   border-radius: 3px;
-  font-weight: 800;
   border: 0.25px #000 solid !important;
 }
 .dropdown-toggle:hover {
@@ -97,7 +96,6 @@
   .secondary-navbar {
     flex-wrap: wrap;
     justify-content: space-around;
-    // flex-direction: column;
   }
 
   .search-bar-container {

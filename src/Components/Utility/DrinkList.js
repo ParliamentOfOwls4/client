@@ -7,13 +7,19 @@ const DrinkList = (props) => {
   } else if (props.drinkData === 'None Found') {
     return (
       <div className='none-found-message'>
-        <h2>Oops!</h2> We couldn't find any drinks with those ingredients. Click <Link
-            className='drink-list-sorry-link'
-            to={{
-              pathname: '/',
-            }}
-          >here</Link> to go back to
-        the home page to try again!
+        <h2>Oops!</h2> We couldn't find any drinks with those ingredients. Try
+        formatting your search like "vodka, orange juice, ice". <br />
+        <br />
+        Click{' '}
+        <Link
+          className='drink-list-sorry-link'
+          to={{
+            pathname: '/',
+          }}
+        >
+          here
+        </Link>{' '}
+        to go back to the home page to try again!
       </div>
     );
   } else {

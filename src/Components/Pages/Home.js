@@ -9,7 +9,7 @@ import { GoSearch } from 'react-icons/go';
 import { Redirect } from 'react-router-dom';
 import { get10Drinks } from '../Config';
 
-const Home = ({ open, setOpen }) => {
+const Home = () => {
   const [randomDrinks, setRandomDrinks] = useState([]);
   const [searchIng, setSearchIng] = useState('');
   const [redirect, setRedirect] = useState(false);
@@ -40,19 +40,19 @@ const Home = ({ open, setOpen }) => {
   if (redirect) {
     return (
       <Redirect
-        to={{ pathname: '/search/result', state: { searchTerm: searchIng } }}
+        to={{ pathname: `/search/${searchIng}`, state: { searchTerm: searchIng } }}
       />
     );
   }
   return (
     <div>
       <div className='secondary-navbar'>
-        <Dropdown>
+        <Dropdown title="pick your poison">
           <DropdownButton title='Choose Alcohol'>
             <Dropdown.Item
               as={Link}
               to={{
-                pathname: '/baseliquor/alcohol',
+                pathname: '/baseliquor/vodka',
                 state: { selection: 'Vodka' },
               }}
               eventKey='vodka'
@@ -62,7 +62,7 @@ const Home = ({ open, setOpen }) => {
             <Dropdown.Item
               as={Link}
               to={{
-                pathname: '/baseliquor/alcohol',
+                pathname: '/baseliquor/scotch',
                 state: { selection: 'Scotch' },
               }}
               eventKey='scotch'
@@ -72,7 +72,7 @@ const Home = ({ open, setOpen }) => {
             <Dropdown.Item
               as={Link}
               to={{
-                pathname: '/baseliquor/alcohol',
+                pathname: '/baseliquor/rum',
                 state: { selection: 'Rum' },
               }}
               eventKey='rum'
@@ -82,7 +82,7 @@ const Home = ({ open, setOpen }) => {
             <Dropdown.Item
               as={Link}
               to={{
-                pathname: '/baseliquor/alcohol',
+                pathname: '/baseliquor/gin',
                 state: { selection: 'Gin' },
               }}
               eventKey='gin'
@@ -92,7 +92,7 @@ const Home = ({ open, setOpen }) => {
             <Dropdown.Item
               as={Link}
               to={{
-                pathname: '/baseliquor/alcohol',
+                pathname: '/baseliquor/tequila',
                 state: { selection: 'Tequila' },
               }}
               eventKey='tequila'
@@ -103,17 +103,20 @@ const Home = ({ open, setOpen }) => {
         </Dropdown>
         <Form className='search-bar-container'>
           <Form.Control
+            title='search by ingredients'
             className='search-bar'
             value={searchIng}
             onChange={handleChange}
             onSubmit={searchByIng}
             placeholder='Search by ingredients...'
+          // placeholder='ex: gin,7-up,lemon_juice...'
           />
           <button type='submit' className='btn-black' onClick={searchByIng}>
             <GoSearch />
           </button>
         </Form>
         <Button
+          title="Hit it!"
           className='random-drinks-button'
           type='submit'
           onClick={onClick}
@@ -127,8 +130,8 @@ const Home = ({ open, setOpen }) => {
           Check out these 10 random drinks!
         </div>
       ) : (
-        ''
-      )}
+          ''
+        )}
       <DrinkList drinkData={randomDrinks} />
     </div>
   );

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Loading from '../Utility/Loading';
 import DrinkList from '../Utility/DrinkList';
-import { getSearchResult } from '../Config'
+import { getSearchResult } from '../Config';
 
 const SearchByIngResult = (props) => {
-  const [searchResult, setSearchResult] = useState(null);
+  const [searchResult, setSearchResult] = useState(null)
+  let searchInput = props.location.state.searchTerm
 
-  let searchInput = props.location.state.searchTerm;
+  // props.location.state ? searchInput = props.location.state.searchTerm : searchInput = window.location.pathname.substr(8)
 
   for (let i = 0; i < searchInput.length; i++) {
     if (searchInput[i] === ' ') {
@@ -30,9 +31,12 @@ const SearchByIngResult = (props) => {
   } else {
     return (
       <div className='search-page-container'>
+        <p className='search-result-title'>
+          Search results for "{searchInput}"
+        </p>
         <DrinkList drinkData={searchResult} />
       </div>
-    )
+    );
   }
 };
 

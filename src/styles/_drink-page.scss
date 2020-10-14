@@ -18,6 +18,7 @@
     top: 0;
     left: 0;
     border-radius: 3px;
+    border: 0.5px solid black;
     box-shadow: 5px 7px 13px $box-shadow-color;
   }
 
@@ -50,17 +51,18 @@
     width: 90%;
     flex-direction: column;
     // background-color: orange;
-  
+
     .drink-page-image {
       height: 250px;
       width: 250px;
       margin: 0 auto;
       position: relative;
+      border: 0.5px solid black;
     }
 
     .drink-page-text-container {
       padding: 200px 20px 20px 20px;
-      margin: -180px 40px 10px 40px;
+      margin: -180px 35px 10px 35px;
 
       .drink-page-title {
         text-align: center;
