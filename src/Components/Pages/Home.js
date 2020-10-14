@@ -108,7 +108,8 @@ const Home = () => {
             value={searchIng}
             onChange={handleChange}
             onSubmit={searchByIng}
-            placeholder='ex: gin,7-up,lemon_juice...'
+            placeholder='search by ingredients...'
+          // placeholder='ex: gin,7-up,lemon_juice...'
           />
           <button type='submit' className='btn-black' onClick={searchByIng}>
             <GoSearch />
