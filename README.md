@@ -15,7 +15,8 @@ This application is a pandemic-inspired collaboration between three friends: [Ro
 <br/>
 <br/>
 
-![Jiggy Screenshot](./src/assets/Jiggy_screenshot_v2.png)
+<kbd><img src="./src/assets/Jiggy_screenshot_v2.png" alt="Jiggy Screenshot"
+	title="Jiggy Screenshot" /></kbd>
 
 ## Important links
 - [Deployed application](https://jiggydrinkology.netlify.app/)
