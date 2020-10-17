@@ -10,7 +10,7 @@ Jiggy allows you to search for cocktails you can make just by telling us which a
 
 ## Motivation 
 
-This application is a pandemic-inspired collaboration between three friends. We wanted to create something that our friends could use to make light of their time stuck inside during quarantine. Now that you now have the time, Jiggy is the tool you've been waiting for to help clear out your adult beverage cupboard.
+This application is a pandemic-inspired collaboration between three friends: [Ross](https://northross.github.io/), [Dan](https://danpowers24.github.io/), and [Thanh](https://tn-space.github.io/). We wanted to create something that our friends could use to make light of their time stuck inside during quarantine. Jiggy is the tool you've been waiting for to help clear out your booze cupboard.
 
 ![Jiggy Screenshot](./src/assets/Jiggy_screenshot_v2.png)
 
@@ -21,7 +21,7 @@ This application is a pandemic-inspired collaboration between three friends. We 
 
 ## Implemented Technologies
 
-Jiggy is a **React** application that consumes RapidAPI's "Cocktail DB" API and database. We employed different **Axios** calls to hit various endpoints of the API - all of which are GET requests (v2.x). **useState** and **useEffect** hooks help manage the state of each functional component. Jiggy is styled with **Sass**, allowing for better organization and consistency throughout the application. Jiggy is **continuously deployed via Netlify**, meaning all merges to main branch trigger an automatic deploy. 
+Jiggy is a **React** application that consumes RapidAPI's "The Cocktail DB" API and database. We employed different **Axios** calls to hit various endpoints of the API - all of which are GET requests (v2.x). **useState** and **useEffect** are React hooks that help manage the state of each functional component. Jiggy is styled with **Sass**, allowing for better organization and consistency throughout the application. Jiggy's deployment is managed through a  **CI/CD pipeline**, a benefit being that all merges to the main branch trigger an automatic deploy via **Netlify**. 
 
 ## Developer commands
 
@@ -37,7 +37,8 @@ Follow these steps to run the application locally:
 - Allow user to sign in and add drinks to "favorites" list
 
 ## Related
-- Getting started with React
-- React hooks
-- React Functional components
-- Sass docs
+- [Getting started with React](https://reactjs.org/docs/getting-started.html)
+- [React hooks](https://reactjs.org/docs/hooks-intro.html)
+- [Sass docs](https://sass-lang.com/documentation)
+- [CI/CD basics](https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html)
+- [Netlify docs](https://docs.netlify.com/?_ga=2.77197589.1859320663.1602972885-1642630294.1599665819)
