@@ -1,6 +1,4 @@
-big logo
-
-description, borrowed from about page
+![Jiggy logo](./src/assets/Jiggy.png)
 
 # Welcome to [Jiggy - Drinkology](https://jiggydrinkology.netlify.app/) 
 
@@ -10,8 +8,11 @@ Got a full liquor cabinet and don't know what to make? Jiggy can help you.
 
 Jiggy allows you to search for cocktails you can make just by telling us which alcohols and ingredients you have on hand. If you're 'Feeling Jiggy', we'll suggest 10 random drinks to make. If you are more curious about the type of liquor you have, select it in the drop-down menu to learn more about it and see drinks you can make. 
 
-## Install dependancies
-To run the application locally, first ```npm i``` and to spin up a local server, run ```npm run start```
+## Developer commands
+Follow these steps to run the application locally: 
+- Clone the repo to a local directory
+- Install dependancies by running ```npm install``` 
+- Then, run ```npm run start```
 
 ## Important links
 - [Deployed application](https://jiggydrinkology.netlify.app/)
