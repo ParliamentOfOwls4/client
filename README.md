@@ -15,6 +15,7 @@ This application is a pandemic-inspired collaboration between three friends: [Ro
 <br/>
 <br/>
 
+![Jiggy logo](./src/assets/Jiggy_screenshot_v2.png){: .shadow}
 <kbd><img src="./src/assets/Jiggy_screenshot_v2.png" alt="Jiggy Screenshot"
 	title="Jiggy Screenshot" /></kbd>
 
