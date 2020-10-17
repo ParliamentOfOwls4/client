@@ -21,7 +21,7 @@ This application is a pandemic-inspired collaboration between three friends. We 
 
 ## Implemented Technologies
 
-Jiggy is a **React** application that consumes RapidAPI's "Cocktail DB" API and database. We employed different **Axios** calls to hit various endpoints of the API - all of which are GET requests (v2.x). **useState** and **useEffect** hooks help manage the state of each functional component. Jiggy is styled with **Sass**, allowing for better organization and consistency throughout the application. 
+Jiggy is a **React** application that consumes RapidAPI's "Cocktail DB" API and database. We employed different **Axios** calls to hit various endpoints of the API - all of which are GET requests (v2.x). **useState** and **useEffect** hooks help manage the state of each functional component. Jiggy is styled with **Sass**, allowing for better organization and consistency throughout the application. Jiggy is **continuously deployed via Netlify**, meaning all merges to main branch trigger an automatic deploy. 
 
 ## Developer commands
 
@@ -37,3 +37,7 @@ Follow these steps to run the application locally:
 - Allow user to sign in and add drinks to "favorites" list
 
 ## Related
+- Getting started with React
+- React hooks
+- React Functional components
+- Sass docs
