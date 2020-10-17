@@ -13,6 +13,7 @@ Jiggy allows you to search for cocktails you can make just by telling us which a
 This application is a pandemic-inspired collaboration between three friends: [Ross](https://northross.github.io/), [Dan](https://danpowers24.github.io/), and [Thanh](https://tn-space.github.io/). We wanted to create something that our friends could use to make light of their time stuck inside during quarantine. Jiggy is the tool you've been waiting for to help clear out your booze cupboard.
 
 <br/>
+<br/>
 
 ![Jiggy Screenshot](./src/assets/Jiggy_screenshot_v2.png)
 
